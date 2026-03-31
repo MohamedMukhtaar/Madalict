@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-manrope), sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(103, 232, 249, 0.18), transparent 30%),
+    linear-gradient(180deg, #f8fbff 0%, #ffffff 42%, #f8fafc 100%);
+}
+
+html.dark body {
+  background:
+    radial-gradient(circle at top right, rgba(249, 115, 22, 0.1), transparent 24%),
+    radial-gradient(circle at left, rgba(34, 211, 238, 0.08), transparent 24%),
+    linear-gradient(180deg, #020617 0%, #0f172a 42%, #111827 100%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-space-grotesk), sans-serif;
+}
+
+::selection {
+  background: rgba(249, 115, 22, 0.22);
+  color: #431407;
+}
+
+@layer base {
+  * {
+    @apply border-slate-200 dark:border-slate-800;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto max-w-8xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-spacing {
+    @apply py-20 sm:py-24;
+  }
+
+  .card-surface {
+    @apply rounded-3xl border border-white/70 bg-white/90 shadow-soft backdrop-blur dark:border-white/10 dark:bg-slate-900/80 dark:shadow-none;
+  }
+
+  .button-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-accent-500 px-6 py-3 text-sm font-semibold text-white shadow-accent transition duration-300 hover:-translate-y-0.5 hover:bg-accent-600;
+  }
+
+  .button-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition duration-300 hover:-translate-y-0.5 hover:border-accent-200 hover:text-accent-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-accent-500/60 dark:hover:text-accent-300;
+  }
+
+  .accent-chip {
+    @apply inline-flex rounded-full border border-accent-200 bg-accent-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-accent-700 dark:border-accent-500/20 dark:bg-accent-500/10 dark:text-accent-300;
+  }
+}
