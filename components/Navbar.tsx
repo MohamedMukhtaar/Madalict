@@ -18,6 +18,14 @@ export default function Navbar({ forceDark = false }: NavbarProps) {
     ? "bg-accent-500 text-white shadow-accent"
     : "bg-accent-500 text-white shadow-accent dark:bg-accent-400 dark:text-slate-950";
 
+  const handleLogoClick = () => {
+    setIsOpen(false);
+
+    if (pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <header className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-2xl transition-colors ${
@@ -27,7 +35,7 @@ export default function Navbar({ forceDark = false }: NavbarProps) {
       }`}>
         <div className="section-shell">
           <nav className="flex items-center justify-between py-4">
-            <Link href="/" className="flex items-center gap-3">
+            <Link href="/" onClick={handleLogoClick} className="flex items-center gap-3">
               <div className={`overflow-hidden rounded-2xl border shadow-sm ${
                 forceDark
                   ? "border-white/10 bg-slate-900"

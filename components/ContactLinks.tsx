@@ -43,11 +43,11 @@ export default function ContactLinks({
 
         {showContactCard ? (
           aboutMode ? (
-            <section className="overflow-hidden rounded-[2rem] border border-accent-500/15 bg-[radial-gradient(circle_at_top,_rgba(249,115,22,0.08),_transparent_28%),linear-gradient(180deg,_rgba(255,255,255,0.98),_rgba(248,250,252,0.96))] px-6 py-14 text-center shadow-[0_28px_70px_-35px_rgba(15,23,42,0.18)] dark:border-white/10 dark:bg-[radial-gradient(circle_at_top,_rgba(249,115,22,0.08),_transparent_28%),linear-gradient(180deg,_rgba(255,255,255,0.98),_rgba(248,250,252,0.96))] sm:px-10">
-              <h2 className="mx-auto max-w-4xl text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
+            <section className="overflow-hidden rounded-[2rem] border border-accent-500/15 bg-[radial-gradient(circle_at_top,_rgba(249,115,22,0.08),_transparent_28%),linear-gradient(180deg,_rgba(255,255,255,0.98),_rgba(248,250,252,0.96))] px-6 py-14 text-center shadow-[0_28px_70px_-35px_rgba(15,23,42,0.18)] dark:border-white/10 dark:bg-[radial-gradient(circle_at_top,_rgba(249,115,22,0.1),_transparent_28%),linear-gradient(180deg,_rgba(15,23,42,0.98),_rgba(2,6,23,0.98))] dark:shadow-[0_28px_70px_-35px_rgba(0,0,0,0.45)] sm:px-10">
+              <h2 className="mx-auto max-w-4xl text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">
                 Got an idea? Let&apos;s make it real<span className="text-accent-400">.</span>
               </h2>
-              <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+              <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
                 No pitch decks, no fluff. Just a quick conversation to see if we&apos;re the right fit for your project.
               </p>
               <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -59,7 +59,7 @@ export default function ContactLinks({
                 </Link>
                 <Link
                   href="/about"
-                  className="inline-flex min-w-[200px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold text-slate-700 transition duration-300 hover:text-slate-950"
+                  className="inline-flex min-w-[200px] items-center justify-center rounded-xl px-6 py-4 text-base font-semibold text-slate-700 transition duration-300 hover:text-slate-950 dark:text-slate-200 dark:hover:text-white"
                 >
                   Learn about us
                 </Link>
