@@ -1,6 +1,6 @@
-import About from "@/components/About";
-import Contact from "@/components/Contact";
-import FeaturedWork from "@/components/FeaturedWork";
+import AboutPreview from "@/components/AboutPreview";
+import BlogPreview from "@/components/BlogPreview";
+import ContactLinks from "@/components/ContactLinks";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
@@ -13,12 +13,12 @@ export default function Home() {
     <main className="overflow-hidden">
       <Navbar />
       <Hero />
-      <About />
-      <Services />
-      <FeaturedWork />
+      <AboutPreview />
+      <Services limit={3} showCta />
       <TrustedCompanies />
+      <BlogPreview limit={3} />
       <Testimonials />
-      <Contact />
+      <ContactLinks showContactCard={false} />
       <Footer />
     </main>
   );

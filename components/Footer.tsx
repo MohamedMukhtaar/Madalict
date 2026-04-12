@@ -45,19 +45,23 @@ function SocialIcon({ label, className = "h-5 w-5" }: { label: string; className
   }
 }
 
-export default function Footer() {
-  const featuredServices = services.slice(0, 5);
+type FooterProps = {
+  forceDark?: boolean;
+};
+
+export default function Footer({ forceDark = false }: FooterProps) {
+  const featuredServices = services.slice(0, 4);
   const iconSocials = socialLinks.filter((item) => item.label !== "Gmail");
   const whatsappLink = socialLinks.find((item) => item.label === "WhatsApp");
   const gmailLink = socialLinks.find((item) => item.label === "Gmail");
 
   return (
-    <footer className="relative border-t border-slate-200/70 dark:border-white/10">
+    <footer className={`relative border-t ${forceDark ? "border-white/10 bg-[#05070a] text-white" : "border-slate-200/70 dark:border-white/10"}`}>
       <div className="section-shell py-16">
-        <div className="grid gap-14 lg:grid-cols-[1.55fr_0.85fr_0.85fr_1fr]">
+        <div className="grid gap-14 lg:grid-cols-[1.4fr_0.9fr_0.8fr_1fr]">
           <div className="max-w-md">
-            <Link href="#top" className="inline-flex items-center gap-4">
-              <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-slate-900">
+            <Link href="/" className="inline-flex items-center gap-4">
+              <div className={`overflow-hidden rounded-2xl border shadow-sm ${forceDark ? "border-white/10 bg-slate-900" : "border-slate-200 bg-white dark:border-white/10 dark:bg-slate-900"}`}>
                 <Image
                   src="/brand.png"
                   alt="Madal ICT Solutions logo"
@@ -67,28 +71,28 @@ export default function Footer() {
                 />
               </div>
               <div>
-                <p className="text-[2rem] font-bold tracking-[-0.04em] text-slate-950 dark:text-white">
+                <p className={`text-[2rem] font-bold tracking-[-0.04em] ${forceDark ? "text-white" : "text-slate-950 dark:text-white"}`}>
                   Madal ICT Solutions
                 </p>
-                <p className="mt-1 text-base font-medium text-accent-500 dark:text-accent-300">
-                  Smart digital solutions for modern businesses
+                <p className={`mt-1 text-base font-medium ${forceDark ? "text-accent-300" : "text-accent-500 dark:text-accent-300"}`}>
+                  Elegant digital systems for growing businesses
                 </p>
               </div>
             </Link>
 
-            <p className="mt-8 max-w-[26rem] text-[1.15rem] leading-10 text-slate-700 dark:text-slate-200">
-              We build websites, systems, and business technology that help organizations grow with confidence, clarity, and dependable long-term support.
+            <p className={`mt-8 max-w-[26rem] text-[1.05rem] leading-8 ${forceDark ? "text-slate-300" : "text-slate-700 dark:text-slate-200"}`}>
+              We design polished websites, dependable systems, and growth-ready digital tools that help organizations look stronger and work smarter.
             </p>
           </div>
 
           <div>
-            <h3 className="text-[1.45rem] font-semibold tracking-[-0.03em] text-slate-950 dark:text-white">Products</h3>
+            <h3 className={`text-[1.45rem] font-semibold tracking-[-0.03em] ${forceDark ? "text-white" : "text-slate-950 dark:text-white"}`}>Services</h3>
             <div className="mt-7 flex flex-col gap-4">
               {featuredServices.map((service) => (
                 <Link
-                  key={service.title}
-                  href="#services"
-                  className="text-[1.08rem] font-medium text-slate-700 transition hover:text-accent-600 dark:text-slate-200 dark:hover:text-accent-300"
+                  key={service.slug}
+                  href="/services"
+                  className={`text-[1.02rem] font-medium transition ${forceDark ? "text-slate-300 hover:text-accent-300" : "text-slate-700 hover:text-accent-600 dark:text-slate-200 dark:hover:text-accent-300"}`}
                 >
                   {service.title}
                 </Link>
@@ -97,13 +101,13 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-[1.45rem] font-semibold tracking-[-0.03em] text-slate-950 dark:text-white">Resources</h3>
+            <h3 className={`text-[1.45rem] font-semibold tracking-[-0.03em] ${forceDark ? "text-white" : "text-slate-950 dark:text-white"}`}>Pages</h3>
             <div className="mt-7 flex flex-col gap-4">
               {quickLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-[1.08rem] font-medium text-slate-700 transition hover:text-accent-600 dark:text-slate-200 dark:hover:text-accent-300"
+                  className={`text-[1.02rem] font-medium transition ${forceDark ? "text-slate-300 hover:text-accent-300" : "text-slate-700 hover:text-accent-600 dark:text-slate-200 dark:hover:text-accent-300"}`}
                 >
                   {link.label}
                 </Link>
@@ -112,18 +116,18 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-[1.45rem] font-semibold tracking-[-0.03em] text-slate-950 dark:text-white">Get In touch</h3>
-            <div className="mt-7 space-y-4 text-[1.08rem] text-slate-700 dark:text-slate-200">
-              <p className="font-semibold text-slate-950 dark:text-white">Need Support?</p>
+            <h3 className={`text-[1.45rem] font-semibold tracking-[-0.03em] ${forceDark ? "text-white" : "text-slate-950 dark:text-white"}`}>Contact</h3>
+            <div className={`mt-7 space-y-4 text-[1.02rem] ${forceDark ? "text-slate-300" : "text-slate-700 dark:text-slate-200"}`}>
               {gmailLink ? (
-                <Link href={gmailLink.href} className="block font-medium transition hover:text-accent-600 dark:hover:text-accent-300">
+                <Link href={gmailLink.href} className={`block font-medium transition ${forceDark ? "hover:text-accent-300" : "hover:text-accent-600 dark:hover:text-accent-300"}`}>
                   {contactDetails.email}
                 </Link>
               ) : null}
               <p className="font-medium">{contactDetails.phone}</p>
+              <p>{contactDetails.location}</p>
             </div>
 
-            <div className="mt-9 flex flex-wrap items-center gap-5 text-slate-900 dark:text-white">
+            <div className={`mt-9 flex flex-wrap items-center gap-5 ${forceDark ? "text-white" : "text-slate-900 dark:text-white"}`}>
               {iconSocials.map((item) => (
                 <Link
                   key={item.label}
@@ -131,7 +135,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={item.label}
-                  className="transition hover:-translate-y-0.5 hover:text-accent-600 dark:hover:text-accent-300"
+                  className={`transition hover:-translate-y-0.5 ${forceDark ? "hover:text-accent-300" : "hover:text-accent-600 dark:hover:text-accent-300"}`}
                 >
                   <SocialIcon label={item.label} className="h-7 w-7" />
                 </Link>
@@ -140,11 +144,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col gap-4 border-t border-slate-200 pt-7 text-base text-slate-500 dark:border-white/10 dark:text-slate-400 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-medium text-slate-600 dark:text-slate-300">Copyright (c) {new Date().getFullYear()} {contactDetails.companyName}. All rights reserved.</p>
-          <div className="flex items-center gap-8">
-            <Link href="#" className="font-medium transition hover:text-accent-600 dark:hover:text-accent-300">Privacy Policy</Link>
-            <Link href="#" className="font-medium transition hover:text-accent-600 dark:hover:text-accent-300">Terms &amp; Conditions</Link>
+        <div className={`mt-16 flex flex-col gap-4 border-t pt-7 pr-20 text-base sm:flex-row sm:items-center sm:justify-between sm:pr-0 ${forceDark ? "border-white/10 text-slate-400" : "border-slate-200 text-slate-500 dark:border-white/10 dark:text-slate-400"}`}>
+          <p className={`font-medium ${forceDark ? "text-slate-300" : "text-slate-600 dark:text-slate-300"}`}>Copyright (c) {new Date().getFullYear()} {contactDetails.companyName}. All rights reserved.</p>
+          <div className="flex flex-wrap items-center gap-5 sm:justify-end">
+            <span className="font-medium">Privacy Policy</span>
+            <span className="font-medium">Terms</span>
+            <span className="font-medium">Pricing</span>
           </div>
         </div>
       </div>

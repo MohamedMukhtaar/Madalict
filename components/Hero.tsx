@@ -1,125 +1,64 @@
+import Image from "next/image";
 import Link from "next/link";
-import { heroStats } from "@/data/siteData";
+import { heroStats, trendHighlights } from "@/data/siteData";
 
 export default function Hero() {
+  const supportingTrends = trendHighlights.slice(1);
+
   return (
-    <section id="top" className="relative overflow-hidden pt-10">
-      <div className="absolute inset-x-0 top-0 -z-10 h-[42rem] bg-[radial-gradient(circle_at_top_right,_rgba(249,115,22,0.16),_transparent_24%),radial-gradient(circle_at_left,_rgba(34,211,238,0.15),_transparent_28%),radial-gradient(circle_at_bottom,_rgba(59,130,246,0.12),_transparent_20%)] dark:bg-[radial-gradient(circle_at_top_right,_rgba(249,115,22,0.18),_transparent_24%),radial-gradient(circle_at_left,_rgba(34,211,238,0.12),_transparent_28%),radial-gradient(circle_at_bottom,_rgba(59,130,246,0.1),_transparent_20%)]" />
-      <div className="section-shell pt-10 sm:pt-14">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.15fr_0.85fr]">
+    <section className="relative overflow-hidden pb-8 pt-8 sm:pb-12">
+      <div className="absolute inset-x-0 top-0 -z-10 h-[48rem] bg-[radial-gradient(circle_at_top_right,_rgba(249,115,22,0.15),_transparent_22%),radial-gradient(circle_at_left,_rgba(34,211,238,0.12),_transparent_26%),linear-gradient(180deg,_rgba(255,255,255,0.92),_rgba(248,250,252,0.7))] dark:bg-[radial-gradient(circle_at_top_right,_rgba(249,115,22,0.18),_transparent_24%),radial-gradient(circle_at_left,_rgba(34,211,238,0.12),_transparent_24%),linear-gradient(180deg,_rgba(2,6,23,0.88),_rgba(15,23,42,0.76))]" />
+      <div className="absolute inset-x-0 top-16 -z-10 mx-auto hidden h-[34rem] max-w-7xl rounded-[3rem] border border-white/60 bg-[linear-gradient(135deg,rgba(255,255,255,0.42),rgba(255,255,255,0.08))] blur-3xl dark:border-white/5 dark:bg-[linear-gradient(135deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] lg:block" />
+      <div className="section-shell pt-8 sm:pt-10">
+        <div className="grid items-center gap-8 lg:grid-cols-[1.02fr_0.98fr]">
           <div className="max-w-3xl">
             <span className="accent-chip bg-white/90 dark:bg-slate-900/80">
-              Premium ICT services for growing organizations
+              Modern ICT systems for growth-focused organizations
             </span>
-            <h1 className="mt-8 text-5xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-6xl">
-              Let&apos;s Grow Your Business with <span className="text-accent-500 dark:text-accent-300">Smart Digital Solutions</span>
+            <h1 className="mt-5 text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl lg:text-6xl">
+              We build ICT products that make your business feel <span className="text-accent-500 dark:text-accent-300">faster, clearer, and more trusted</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
-              Madal ICT Solutions helps businesses build high-impact websites,
-              custom systems, mobile apps, and digital transformation strategies
-              that improve efficiency, visibility, and long-term growth.
+            <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">
+              Madal ICT Solutions designs premium websites, dependable business systems, and practical digital tools that help teams serve customers better and operate with confidence.
             </p>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Link href="#contact" className="button-primary">
-                Get Started
+            <div className="mt-7 flex flex-col gap-4 sm:flex-row">
+              <Link href="/contact" className="button-primary">
+                Book a Free Consultation
               </Link>
-              <Link href="#services" className="button-secondary">
-                Our Services
+              <Link href="/about" className="button-secondary">
+                See Our Approach
               </Link>
+            </div>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              {["Websites", "Business Systems", "Mobile Apps", "Database Solutions"].map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-slate-200/90 bg-white/75 px-4 py-2 text-sm font-medium text-slate-700 shadow-[0_12px_30px_-25px_rgba(15,23,42,0.7)] dark:border-white/10 dark:bg-slate-900/70 dark:text-slate-200"
+                >
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
 
-          <div className="relative">
-            <div className="absolute -left-6 top-12 h-24 w-24 rounded-full bg-accent-300/30 blur-3xl" />
-            <div className="absolute -right-8 bottom-10 h-32 w-32 rounded-full bg-blue-200/60 blur-3xl dark:bg-brand-500/20" />
-
-            <div className="card-surface relative overflow-hidden p-6 sm:p-8">
-              <div className="absolute inset-0 bg-hero-grid bg-[size:30px_30px] opacity-40 dark:opacity-15" />
-              <div className="relative space-y-6">
-                <div className="flex items-center justify-between rounded-3xl border border-slate-200 bg-slate-950 px-5 py-4 text-white shadow-soft dark:border-white/10 dark:bg-slate-950/90">
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.22em] text-accent-300">
-                      Delivery Overview
-                    </p>
-                    <p className="mt-2 text-xl font-semibold">System rollout in progress</p>
-                  </div>
-                  <div className="rounded-full bg-white/10 px-3 py-1 text-sm text-accent-200">
-                    92%
-                  </div>
-                </div>
-
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-3xl border border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-slate-900/90">
-                    <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">Core Capabilities</p>
-                    <ul className="mt-4 space-y-3 text-sm text-slate-700 dark:text-slate-200">
-                      <li>Web platforms</li>
-                      <li>Business systems</li>
-                      <li>Mobile applications</li>
-                      <li>ICT advisory</li>
-                    </ul>
-                  </div>
-                  <div className="rounded-3xl border border-accent-100 bg-gradient-to-br from-accent-50 to-cyan-50 p-5 dark:border-accent-500/20 dark:from-accent-500/10 dark:to-brand-500/10">
-                    <p className="text-sm font-semibold text-slate-500 dark:text-slate-300">Client Focus</p>
-                    <p className="mt-4 text-4xl font-bold tracking-tight text-slate-950 dark:text-white">
-                      24/7
-                    </p>
-                    <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
-                      Reliable support and proactive improvement for critical systems.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="rounded-[2rem] border border-slate-200 bg-white p-6 dark:border-white/10 dark:bg-slate-900/90">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">
-                        Transformation Snapshot
-                      </p>
-                      <p className="mt-2 text-2xl font-bold text-slate-950 dark:text-white">
-                        Digital readiness dashboard
-                      </p>
-                    </div>
-                    <span className="rounded-full bg-accent-50 px-3 py-1 text-sm font-semibold text-accent-700 dark:bg-accent-500/10 dark:text-accent-300">
-                      Live Insight
-                    </span>
-                  </div>
-                  <div className="mt-6 space-y-4">
-                    <div>
-                      <div className="mb-2 flex items-center justify-between text-sm text-slate-600 dark:text-slate-300">
-                        <span>Automation adoption</span>
-                        <span>88%</span>
-                      </div>
-                      <div className="h-2 rounded-full bg-slate-100 dark:bg-slate-800">
-                        <div className="h-2 w-[88%] rounded-full bg-accent-500" />
-                      </div>
-                    </div>
-                    <div>
-                      <div className="mb-2 flex items-center justify-between text-sm text-slate-600 dark:text-slate-300">
-                        <span>Client onboarding flow</span>
-                        <span>76%</span>
-                      </div>
-                      <div className="h-2 rounded-full bg-slate-100 dark:bg-slate-800">
-                        <div className="h-2 w-[76%] rounded-full bg-brand-500" />
-                      </div>
-                    </div>
-                    <div>
-                      <div className="mb-2 flex items-center justify-between text-sm text-slate-600 dark:text-slate-300">
-                        <span>Data visibility</span>
-                        <span>94%</span>
-                      </div>
-                      <div className="h-2 rounded-full bg-slate-100 dark:bg-slate-800">
-                        <div className="h-2 w-[94%] rounded-full bg-slate-900 dark:bg-slate-200" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          <div className="grid gap-5">
+            <article className="group card-surface overflow-hidden p-3">
+              <div className="relative min-h-[420px] overflow-hidden rounded-[1.8rem]">
+                <Image
+                  src="/pexels-pixabay-39559.jpg"
+                  alt="Computer programs and digital systems interface"
+                  fill
+                  className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                  sizes="(max-width: 1024px) 100vw, 52vw"
+                />
               </div>
-            </div>
+            </article>
           </div>
         </div>
 
-        <div className="relative z-10 mx-auto mt-16 max-w-6xl pb-20 sm:pb-24">
+        <div className="relative z-10 mx-auto mt-12 max-w-6xl pb-10 sm:pb-12">
           <div className="rounded-[2rem] border border-slate-200/80 bg-white/95 px-6 py-8 shadow-[0_30px_80px_-30px_rgba(15,23,42,0.22)] backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/85 dark:shadow-none sm:px-10 lg:px-14">
             <div className="grid grid-cols-1 divide-y divide-slate-200 sm:grid-cols-3 sm:divide-x sm:divide-y-0 dark:divide-slate-800">
               {heroStats.map((stat) => (

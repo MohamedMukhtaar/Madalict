@@ -17,15 +17,17 @@ html {
 body {
   font-family: var(--font-manrope), sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(103, 232, 249, 0.18), transparent 30%),
-    linear-gradient(180deg, #f8fbff 0%, #ffffff 42%, #f8fafc 100%);
+    radial-gradient(circle at top left, rgba(103, 232, 249, 0.16), transparent 24%),
+    radial-gradient(circle at top right, rgba(249, 115, 22, 0.15), transparent 22%),
+    linear-gradient(180deg, #f4fbff 0%, #ffffff 42%, #eef5fb 100%);
+  min-height: 100vh;
 }
 
 html.dark body {
   background:
-    radial-gradient(circle at top right, rgba(249, 115, 22, 0.1), transparent 24%),
-    radial-gradient(circle at left, rgba(34, 211, 238, 0.08), transparent 24%),
-    linear-gradient(180deg, #020617 0%, #0f172a 42%, #111827 100%);
+    radial-gradient(circle at top right, rgba(249, 115, 22, 0.14), transparent 20%),
+    radial-gradient(circle at left, rgba(34, 211, 238, 0.09), transparent 22%),
+    linear-gradient(180deg, #020617 0%, #0b1120 38%, #111827 100%);
 }
 
 h1,
@@ -38,8 +40,13 @@ h6 {
 }
 
 ::selection {
-  background: rgba(249, 115, 22, 0.22);
-  color: #431407;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+html.dark ::selection {
+  background: #2563eb;
+  color: #ffffff;
 }
 
 @layer base {
@@ -54,22 +61,22 @@ h6 {
   }
 
   .section-spacing {
-    @apply py-20 sm:py-24;
+    @apply py-16 sm:py-20;
   }
 
   .card-surface {
-    @apply rounded-3xl border border-white/70 bg-white/90 shadow-soft backdrop-blur dark:border-white/10 dark:bg-slate-900/80 dark:shadow-none;
+    @apply rounded-[2rem] border border-white/80 bg-white/90 shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/80 dark:shadow-none;
   }
 
   .button-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-accent-500 px-6 py-3 text-sm font-semibold text-white shadow-accent transition duration-300 hover:-translate-y-0.5 hover:bg-accent-600;
+    @apply inline-flex items-center justify-center rounded-full bg-accent-500 px-6 py-3 text-sm font-semibold text-white shadow-accent transition duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-slate-950 dark:bg-accent-400 dark:text-slate-950 dark:hover:bg-white dark:hover:text-slate-950;
   }
 
   .button-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition duration-300 hover:-translate-y-0.5 hover:border-accent-200 hover:text-accent-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-accent-500/60 dark:hover:text-accent-300;
+    @apply inline-flex items-center justify-center rounded-full border border-slate-300/90 bg-white/80 px-6 py-3 text-sm font-semibold text-slate-700 transition duration-300 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white hover:text-slate-950 dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-200 dark:hover:border-slate-500 dark:hover:text-white;
   }
 
   .accent-chip {
-    @apply inline-flex rounded-full border border-accent-200 bg-accent-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-accent-700 dark:border-accent-500/20 dark:bg-accent-500/10 dark:text-accent-300;
+    @apply inline-flex rounded-full border border-accent-200/80 bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-accent-700 shadow-[0_8px_24px_-18px_rgba(249,115,22,0.65)] dark:border-accent-500/20 dark:bg-accent-500/10 dark:text-accent-300;
   }
 }
