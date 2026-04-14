@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="overflow-hidden">
+    <main id="main-content" className="overflow-hidden">
       <Navbar />
       <Contact />
       <Footer />

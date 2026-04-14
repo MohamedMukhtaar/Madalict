@@ -9,10 +9,10 @@ export default function AboutPreview() {
             <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-accent-100/70 blur-3xl dark:bg-accent-500/10" />
             <span className="accent-chip">About Us</span>
             <p className="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300">
-              We partner with businesses that want more than a basic online presence. From first impression to back-office workflows, we design digital systems that feel professional and remove friction.
+              We partner with businesses that want more than a basic online presence. From first impression to back-office workflows, we design digital systems that feel branded, fast, and trustworthy.
             </p>
             <div className="pt-5">
-              <Link href="/about" className="inline-flex text-sm font-semibold text-accent-600 transition hover:text-accent-700 dark:text-accent-300">
+              <Link href="/about" className="inline-flex text-sm font-semibold text-brand-800 transition hover:text-accent-600 dark:text-accent-300">
                 Learn more about us
               </Link>
             </div>

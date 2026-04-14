@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   return (
-    <main className="overflow-hidden">
+    <main id="main-content" className="overflow-hidden">
       <Navbar />
       <PageIntro
         eyebrow="Blog"

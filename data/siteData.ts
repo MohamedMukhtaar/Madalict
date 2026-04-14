@@ -67,6 +67,18 @@ export const heroStats = [
   { value: "2+", label: "Years of Experience" },
 ];
 
+const remoteImages = {
+  hero: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80",
+  collaboration: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80",
+  consulting: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80",
+  mobile: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80",
+  dashboard: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80",
+  design: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80",
+  operations: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80",
+  meeting: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80",
+  blog: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1400&q=80",
+};
+
 export const services: Service[] = [
   {
     slug: "web-development",
@@ -75,7 +87,7 @@ export const services: Service[] = [
       "Responsive corporate websites, portals, and growth-focused platforms built for credibility, speed, and lead generation.",
     summary:
       "We design and build websites that present your business clearly, convert visitors into inquiries, and feel strong across mobile and desktop.",
-    image: "/pexels-pixabay-39559.jpg",
+    image: remoteImages.hero,
     deliverables: ["Corporate websites", "Client portals", "SEO-ready landing pages"],
   },
   {
@@ -85,7 +97,7 @@ export const services: Service[] = [
       "Cross-platform mobile apps that help businesses serve customers, automate field work, and stay connected on the move.",
     summary:
       "From staff tools to customer apps, we create mobile experiences that are practical, reliable, and easy to scale.",
-    image: "/marketing-creative-collage-with-phone.jpg",
+    image: remoteImages.mobile,
     deliverables: ["Android and iOS apps", "Admin dashboards", "Realtime notifications"],
   },
   {
@@ -95,7 +107,7 @@ export const services: Service[] = [
       "Clear product strategy, interface systems, and user journeys that make digital services feel easy and professional.",
     summary:
       "We turn complex workflows into interfaces people can understand quickly, reducing friction and increasing confidence.",
-    image: "/3d-rendering-website-hosting-concept.jpg",
+    image: remoteImages.design,
     deliverables: ["Wireframes", "Design systems", "Clickable prototypes"],
   },
   {
@@ -105,7 +117,7 @@ export const services: Service[] = [
       "Operational systems tailored to your workflows, from administration and approvals to service delivery and reporting.",
     summary:
       "We replace manual spreadsheets and fragmented tools with systems shaped around the way your team actually works.",
-    image: "/pexels-dumitru-b-742240889-32944547.jpg",
+    image: remoteImages.operations,
     deliverables: ["ERP-style workflows", "Role-based dashboards", "Approval pipelines"],
   },
   {
@@ -115,7 +127,7 @@ export const services: Service[] = [
       "Secure data architecture, optimization, and management for dependable reporting and scalable business operations.",
     summary:
       "Your systems are only as strong as the data underneath them, so we build clean, stable, and maintainable data layers.",
-    image: "/pexels-n-voitkevich-6214477.jpg",
+    image: remoteImages.dashboard,
     deliverables: ["Database design", "Performance tuning", "Backup planning"],
   },
   {
@@ -125,7 +137,7 @@ export const services: Service[] = [
       "Practical technology guidance for digital transformation, infrastructure planning, and product roadmaps.",
     summary:
       "We help organizations make better technology decisions with clear recommendations, realistic phases, and measurable outcomes.",
-    image: "/empowered-business-woman-working-city.jpg",
+    image: remoteImages.consulting,
     deliverables: ["Technology audits", "Roadmaps", "Implementation guidance"],
   },
 ];
@@ -212,21 +224,21 @@ export const trendHighlights: TrendHighlight[] = [
     description:
       "Organizations now expect their website to handle trust, inquiries, product clarity, and early qualification instead of acting like a static brochure.",
     stat: "71% stronger first impression",
-    image: "/3d-rendering-website-hosting-concept.jpg",
+    image: remoteImages.hero,
   },
   {
     title: "Mobile-led service delivery",
     description:
       "More businesses are serving teams and customers through mobile-first tools that reduce waiting, confusion, and repeated manual calls.",
     stat: "3x more mobile actions",
-    image: "/marketing-creative-collage-with-phone.jpg",
+    image: remoteImages.mobile,
   },
   {
     title: "Operational calm through automation",
     description:
       "The best systems are removing repetitive admin work while keeping visibility, approvals, and reporting clean for management.",
     stat: "62% less manual follow-up",
-    image: "/pexels-n-voitkevich-6214477.jpg",
+    image: remoteImages.dashboard,
   },
 ];
 
@@ -239,7 +251,7 @@ export const blogPosts: BlogPost[] = [
     category: "Growth",
     date: "April 6, 2026",
     readTime: "5 min read",
-    image: "/pexels-pixabay-39559.jpg",
+    image: remoteImages.blog,
   },
   {
     slug: "building-systems-around-real-workflows",
@@ -249,7 +261,7 @@ export const blogPosts: BlogPost[] = [
     category: "Systems",
     date: "April 6, 2026",
     readTime: "6 min read",
-    image: "/pexels-dumitru-b-742240889-32944547.jpg",
+    image: remoteImages.operations,
   },
   {
     slug: "designing-mobile-tools-for-real-teams",
@@ -259,7 +271,7 @@ export const blogPosts: BlogPost[] = [
     category: "Mobile",
     date: "April 6, 2026",
     readTime: "4 min read",
-    image: "/empowered-business-woman-working-city.jpg",
+    image: remoteImages.collaboration,
   },
 ];
 
@@ -278,5 +290,6 @@ export const contactDetails = {
   companyName: "Madal ICT Solutions",
   email: "madalictsolutions@gmail.com",
   phone: "0614620998",
+  phoneHref: "+252614620998",
   location: "Mogadishu, Somalia",
 };

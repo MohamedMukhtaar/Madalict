@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <main className="overflow-hidden">
+    <main id="main-content" className="overflow-hidden">
       <Navbar />
       <PageIntro
         eyebrow="Services"

@@ -52,11 +52,10 @@ type FooterProps = {
 export default function Footer({ forceDark = false }: FooterProps) {
   const featuredServices = services.slice(0, 4);
   const iconSocials = socialLinks.filter((item) => item.label !== "Gmail");
-  const whatsappLink = socialLinks.find((item) => item.label === "WhatsApp");
   const gmailLink = socialLinks.find((item) => item.label === "Gmail");
 
   return (
-    <footer className={`relative border-t ${forceDark ? "border-white/10 bg-[#05070a] text-white" : "border-slate-200/70 dark:border-white/10"}`}>
+    <footer className={`relative border-t ${forceDark ? "border-white/10 bg-[#05070a] text-white" : "border-brand-100/70 dark:border-white/10"}`}>
       <div className="section-shell py-16">
         <div className="grid gap-14 lg:grid-cols-[1.4fr_0.9fr_0.8fr_1fr]">
           <div className="max-w-md">
@@ -75,13 +74,13 @@ export default function Footer({ forceDark = false }: FooterProps) {
                   Madal ICT Solutions
                 </p>
                 <p className={`mt-1 text-base font-medium ${forceDark ? "text-accent-300" : "text-accent-500 dark:text-accent-300"}`}>
-                  Elegant digital systems for growing businesses
+                  Professional digital systems for growing businesses
                 </p>
               </div>
             </Link>
 
             <p className={`mt-8 max-w-[26rem] text-[1.05rem] leading-8 ${forceDark ? "text-slate-300" : "text-slate-700 dark:text-slate-200"}`}>
-              We design polished websites, dependable systems, and growth-ready digital tools that help organizations look stronger and work smarter.
+              We design polished websites, dependable systems, and growth-ready digital tools that help organizations look stronger, load faster, and convert with more confidence.
             </p>
           </div>
 
@@ -153,18 +152,6 @@ export default function Footer({ forceDark = false }: FooterProps) {
           </div>
         </div>
       </div>
-
-      {whatsappLink ? (
-        <Link
-          href={whatsappLink.href}
-          target="_blank"
-          rel="noreferrer"
-          aria-label="WhatsApp"
-          className="fixed bottom-6 right-6 z-40 inline-flex h-16 w-16 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_18px_40px_-12px_rgba(37,211,102,0.8)] transition hover:scale-105"
-        >
-          <SocialIcon label="WhatsApp" className="h-8 w-8" />
-        </Link>
-      ) : null}
     </footer>
   );
 }

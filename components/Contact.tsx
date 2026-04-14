@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { contactDetails, services } from "@/data/siteData";
 
 const contactInfo = [
@@ -78,13 +79,22 @@ export default function Contact() {
                 >
                   <ContactInfoIcon icon={item.icon} />
                   <div>
-                    <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${index % 2 === 0 ? "text-cyan-600 dark:text-cyan-300" : "text-accent-600 dark:text-accent-300"}`}>
+                    <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${index % 2 === 0 ? "text-brand-700 dark:text-brand-300" : "text-accent-600 dark:text-accent-300"}`}>
                       {item.label}
                     </p>
                     <p className="mt-2 text-base text-slate-700 dark:text-slate-200">{item.value}</p>
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-6 flex flex-col gap-4 sm:flex-row">
+              <Link href={`tel:${contactDetails.phoneHref}`} className="button-primary">
+                Call on Mobile
+              </Link>
+              <Link href="/contact#contact-form" className="button-secondary">
+                Send Project Details
+              </Link>
             </div>
           </div>
 

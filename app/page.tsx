@@ -10,7 +10,7 @@ import TrustedCompanies from "@/components/TrustedCompanies";
 
 export default function Home() {
   return (
-    <main className="overflow-hidden">
+    <main id="main-content" className="overflow-hidden">
       <Navbar />
       <Hero />
       <AboutPreview />
