@@ -71,13 +71,13 @@ function ValueIcon({ icon }: { icon: string }) {
 
 export default function About() {
   return (
-    <section className="section-spacing bg-white text-slate-950 dark:bg-[#070c0a] dark:text-white">
+    <section className="section-spacing bg-white text-slate-950 dark:bg-brand-900 dark:text-white">
       <div className="section-shell space-y-10">
-        <section className="grid items-center gap-10 rounded-[2rem] border border-accent-500/20 bg-[radial-gradient(circle_at_bottom_left,_rgba(34,211,238,0.08),_transparent_24%),linear-gradient(180deg,_rgba(255,255,255,0.98),_rgba(247,250,252,0.98))] p-8 shadow-[0_30px_80px_-40px_rgba(15,23,42,0.14)] dark:bg-[radial-gradient(circle_at_bottom_left,_rgba(34,211,238,0.08),_transparent_24%),linear-gradient(180deg,_rgba(10,11,14,0.98),_rgba(6,8,12,0.98))] dark:shadow-[0_30px_80px_-40px_rgba(249,115,22,0.18)] lg:grid-cols-[0.8fr_1.2fr] lg:p-12">
+        <section className="grid items-center gap-10 rounded-2xl border border-accent-500/20 bg-[linear-gradient(90deg,rgba(255,122,0,0.08)_1px,transparent_1px),linear-gradient(180deg,_rgba(255,255,255,0.98),_rgba(255,250,244,0.98))] bg-[length:42px_42px,auto] p-8 shadow-[0_30px_80px_-40px_rgba(7,7,7,0.18)] dark:bg-[linear-gradient(90deg,rgba(255,122,0,0.08)_1px,transparent_1px),linear-gradient(180deg,_rgba(17,16,14,0.98),_rgba(7,7,7,0.98))] dark:shadow-[0_30px_80px_-40px_rgba(255,122,0,0.18)] lg:grid-cols-[0.8fr_1.2fr] lg:p-12">
           <div className="flex justify-center">
-            <div className="relative overflow-hidden rounded-[1.75rem] bg-white p-8 shadow-[0_0_60px_-10px_rgba(249,115,22,0.18)] dark:bg-[#0b0d11] dark:shadow-[0_0_60px_-10px_rgba(249,115,22,0.24)]">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(249,115,22,0.12),_transparent_62%)] dark:bg-[radial-gradient(circle_at_center,_rgba(249,115,22,0.16),_transparent_62%)]" />
-              <div className="relative overflow-hidden rounded-[1.25rem] border border-accent-500/20 bg-slate-50 p-10 dark:bg-[#05070a]">
+            <div className="relative overflow-hidden rounded-2xl bg-brand-900 p-8 shadow-[0_0_60px_-10px_rgba(255,122,0,0.24)]">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,122,0,0.18),_transparent_62%)]" />
+              <div className="relative overflow-hidden rounded-xl border border-accent-500/25 bg-brand-900 p-10">
                 <Image
                   src="/brand.png"
                   alt="Madal ICT Solutions logo"
@@ -144,8 +144,8 @@ export default function About() {
                 key={value.title}
                 className={`relative overflow-hidden rounded-[1.75rem] border p-6 ${
                   index % 2 === 0
-                    ? "border-accent-500/20 bg-[radial-gradient(circle_at_top,_rgba(249,115,22,0.08),_transparent_22%),linear-gradient(180deg,_rgba(255,255,255,0.98),_rgba(247,250,252,0.98))] shadow-[0_22px_60px_-35px_rgba(15,23,42,0.12)] dark:bg-[radial-gradient(circle_at_top,_rgba(249,115,22,0.1),_transparent_22%),linear-gradient(180deg,_rgba(10,11,14,0.98),_rgba(6,8,12,0.98))] dark:shadow-[0_22px_60px_-35px_rgba(249,115,22,0.18)]"
-                    : "border-brand-500/20 bg-[radial-gradient(circle_at_top,_rgba(34,211,238,0.06),_transparent_24%),linear-gradient(180deg,_rgba(255,255,255,0.98),_rgba(247,250,252,0.98))] shadow-[0_22px_60px_-35px_rgba(15,23,42,0.12)] dark:bg-[radial-gradient(circle_at_top,_rgba(34,211,238,0.08),_transparent_24%),linear-gradient(180deg,_rgba(10,11,14,0.98),_rgba(6,8,12,0.98))] dark:shadow-[0_22px_60px_-35px_rgba(34,211,238,0.15)]"
+                    ? "border-accent-500/20 bg-[linear-gradient(180deg,_rgba(255,250,244,0.98),_rgba(255,255,255,0.98))] shadow-[0_22px_60px_-35px_rgba(7,7,7,0.16)] dark:bg-[linear-gradient(180deg,_rgba(17,16,14,0.98),_rgba(7,7,7,0.98))] dark:shadow-[0_22px_60px_-35px_rgba(255,122,0,0.18)]"
+                    : "border-brand-500/20 bg-[linear-gradient(180deg,_rgba(255,255,255,0.98),_rgba(244,244,243,0.98))] shadow-[0_22px_60px_-35px_rgba(7,7,7,0.16)] dark:bg-[linear-gradient(180deg,_rgba(17,16,14,0.98),_rgba(7,7,7,0.98))] dark:shadow-[0_22px_60px_-35px_rgba(7,7,7,0.45)]"
                 }`}
               >
                 <div className={`absolute left-1/2 top-0 h-28 w-28 -translate-x-1/2 rounded-b-full ${index % 2 === 0 ? "bg-accent-500/10" : "bg-brand-500/10"} blur-[2px]`} />

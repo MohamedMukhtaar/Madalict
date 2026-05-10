@@ -12,7 +12,7 @@ export default function Services({ limit, showCta = false }: ServicesProps) {
   const visibleServices = typeof limit === "number" ? services.slice(0, limit) : services;
 
   return (
-    <section className="section-spacing bg-slate-50/50 dark:bg-slate-950/30">
+    <section className="section-spacing bg-white/[0.55] dark:bg-brand-900">
       <div className="section-shell">
         <SectionTitle
           eyebrow="Services"
@@ -25,9 +25,9 @@ export default function Services({ limit, showCta = false }: ServicesProps) {
           {visibleServices.map((service) => (
             <article
               key={service.slug}
-              className="group card-surface overflow-hidden p-3 transition duration-300 hover:-translate-y-1"
+              className="group card-surface overflow-hidden p-3 transition duration-300 hover:-translate-y-1 hover:border-accent-500/35"
             >
-              <div className="relative h-56 overflow-hidden rounded-[1.8rem]">
+              <div className="relative h-56 overflow-hidden rounded-xl">
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -35,7 +35,7 @@ export default function Services({ limit, showCta = false }: ServicesProps) {
                   className="scale-105 object-cover transition duration-500 group-hover:scale-100"
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                 />
-                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/35 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-brand-900/55 to-transparent" />
               </div>
 
               <div className="p-4">
@@ -51,7 +51,7 @@ export default function Services({ limit, showCta = false }: ServicesProps) {
                 <ul className="mt-5 space-y-2 text-sm text-slate-600 dark:text-slate-300">
                   {service.deliverables.map((deliverable) => (
                     <li key={deliverable} className="flex items-center gap-3">
-                      <span className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-950 text-[10px] font-bold text-white dark:bg-white dark:text-slate-950">
+                      <span className="flex h-6 w-6 items-center justify-center rounded-full bg-accent-500 text-[10px] font-bold text-brand-900">
                         +
                       </span>
                       {deliverable}
@@ -59,7 +59,7 @@ export default function Services({ limit, showCta = false }: ServicesProps) {
                   ))}
                 </ul>
 
-                <div className="mt-6 flex items-center justify-between border-t border-slate-200/80 pt-5 dark:border-slate-800">
+                <div className="mt-6 flex items-center justify-between border-t border-brand-100/80 pt-5 dark:border-white/10">
                   <span className="text-sm font-medium text-slate-500 dark:text-slate-400">
                     Tailored for modern teams
                   </span>

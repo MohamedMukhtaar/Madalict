@@ -11,7 +11,7 @@ export default function BlogPreview({ limit }: BlogPreviewProps) {
   const visiblePosts = typeof limit === "number" ? blogPosts.slice(0, limit) : blogPosts;
 
   return (
-    <section className="section-spacing bg-slate-50/70 dark:bg-slate-950/30">
+    <section className="section-spacing bg-white/[0.55] dark:bg-brand-900">
       <div className="section-shell">
         <SectionTitle
           eyebrow="Blog"
@@ -22,8 +22,8 @@ export default function BlogPreview({ limit }: BlogPreviewProps) {
 
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
           {visiblePosts.map((post) => (
-            <article key={post.slug} className="group card-surface overflow-hidden p-3">
-              <div className="relative h-52 overflow-hidden rounded-[1.6rem]">
+            <article key={post.slug} className="group card-surface overflow-hidden p-3 transition duration-300 hover:-translate-y-1 hover:border-accent-500/35">
+              <div className="relative h-52 overflow-hidden rounded-xl">
                 <Image
                   src={post.image}
                   alt={post.title}

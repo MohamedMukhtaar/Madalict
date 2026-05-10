@@ -34,7 +34,7 @@ export default function Navbar({ forceDark = false }: NavbarProps) {
       <header className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-2xl transition-colors ${
         forceDark
           ? "border-white/10 bg-brand-900/85"
-          : "border-white/60 bg-white/80 shadow-[0_18px_60px_-40px_rgba(10,37,64,0.35)] dark:border-white/10 dark:bg-brand-900/75"
+          : "border-white/60 bg-white/80 shadow-[0_18px_60px_-40px_rgba(7,7,7,0.35)] dark:border-white/10 dark:bg-brand-900/75"
       }`}>
         <div className="section-shell">
           <nav className="flex items-center justify-between py-4">
@@ -66,7 +66,7 @@ export default function Navbar({ forceDark = false }: NavbarProps) {
             <div className={`hidden items-center gap-8 rounded-full border px-6 py-3 lg:flex ${
               forceDark
                 ? "border-white/10 bg-white/5"
-                : "border-brand-100 bg-white/88 dark:border-white/10 dark:bg-brand-900/70"
+                : "border-brand-100 bg-white/[0.88] dark:border-white/10 dark:bg-brand-900/70"
             }`}>
               {navItems.map((item) => {
                 const isActive = pathname === item.href;

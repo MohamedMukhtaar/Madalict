@@ -17,17 +17,19 @@ html {
 body {
   font-family: var(--font-manrope), sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(10, 37, 64, 0.08), transparent 28%),
-    radial-gradient(circle at top right, rgba(245, 124, 0, 0.12), transparent 24%),
-    linear-gradient(180deg, #f8fbfd 0%, #ffffff 44%, #f4f6f9 100%);
+    linear-gradient(90deg, rgba(7, 7, 7, 0.035) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 122, 0, 0.12) 0%, transparent 24rem),
+    linear-gradient(180deg, #fffaf4 0%, #ffffff 42%, #f7f5f0 100%);
+  background-size: 44px 44px, auto, auto;
   min-height: 100vh;
 }
 
 html.dark body {
   background:
-    radial-gradient(circle at top right, rgba(245, 124, 0, 0.14), transparent 22%),
-    radial-gradient(circle at left, rgba(10, 37, 64, 0.28), transparent 24%),
-    linear-gradient(180deg, #07111d 0%, #0a1626 38%, #0f1d2f 100%);
+    linear-gradient(90deg, rgba(255, 122, 0, 0.06) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 122, 0, 0.18) 0%, transparent 24rem),
+    linear-gradient(180deg, #070707 0%, #11100e 44%, #070707 100%);
+  background-size: 44px 44px, auto, auto;
 }
 
 h1,
@@ -40,13 +42,13 @@ h6 {
 }
 
 ::selection {
-  background: #2563eb;
+  background: #ff7a00;
   color: #ffffff;
 }
 
 html.dark ::selection {
-  background: #2563eb;
-  color: #ffffff;
+  background: #ff7a00;
+  color: #070707;
 }
 
 @layer base {
@@ -65,18 +67,18 @@ html.dark ::selection {
   }
 
   .card-surface {
-    @apply rounded-[2rem] border border-white/80 bg-white/90 shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-brand-900/80 dark:shadow-none;
+    @apply rounded-2xl border border-brand-100/80 bg-white/[0.92] shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-brand-900/[0.88] dark:shadow-none;
   }
 
   .button-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-accent-500 px-6 py-3 text-sm font-semibold text-white shadow-accent transition duration-300 hover:-translate-y-0.5 hover:bg-brand-900 hover:text-white dark:bg-accent-500 dark:text-white dark:hover:bg-white dark:hover:text-brand-900;
+    @apply inline-flex items-center justify-center rounded-full bg-accent-500 px-6 py-3 text-sm font-semibold text-white shadow-accent transition duration-300 hover:-translate-y-0.5 hover:bg-brand-900 hover:text-white dark:bg-accent-500 dark:text-brand-900 dark:hover:bg-white dark:hover:text-brand-900;
   }
 
   .button-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-brand-200 bg-white/85 px-6 py-3 text-sm font-semibold text-brand-800 transition duration-300 hover:-translate-y-0.5 hover:border-brand-400 hover:bg-brand-900 hover:text-white dark:border-brand-700 dark:bg-brand-900/60 dark:text-slate-100 dark:hover:border-brand-500 dark:hover:bg-white dark:hover:text-brand-900;
+    @apply inline-flex items-center justify-center rounded-full border border-brand-300 bg-white/[0.85] px-6 py-3 text-sm font-semibold text-brand-900 transition duration-300 hover:-translate-y-0.5 hover:border-accent-500 hover:bg-brand-900 hover:text-white dark:border-white/15 dark:bg-white/5 dark:text-slate-100 dark:hover:border-accent-500 dark:hover:bg-white dark:hover:text-brand-900;
   }
 
   .accent-chip {
-    @apply inline-flex rounded-full border border-brand-200 bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-brand-800 shadow-[0_10px_24px_-18px_rgba(10,37,64,0.45)] dark:border-brand-700 dark:bg-brand-900/70 dark:text-accent-200;
+    @apply inline-flex rounded-full border border-accent-500/25 bg-accent-50/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-accent-700 shadow-[0_10px_24px_-18px_rgba(255,122,0,0.55)] dark:border-accent-500/35 dark:bg-accent-500/10 dark:text-accent-200;
   }
 }

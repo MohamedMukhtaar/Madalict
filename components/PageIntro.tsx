@@ -12,7 +12,7 @@ export default function PageIntro({ eyebrow, title, description, showLogo = fals
     <section className="relative overflow-hidden pt-10">
       <div className="section-shell">
         <div className="card-surface relative overflow-hidden px-6 py-10 sm:px-8 sm:py-10 lg:px-12 lg:py-10">
-          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,_rgba(245,124,0,0.16),_transparent_24%),radial-gradient(circle_at_left,_rgba(10,37,64,0.08),_transparent_26%)]" />
+          <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(255,122,0,0.08)_1px,transparent_1px),linear-gradient(180deg,rgba(255,122,0,0.12),transparent)] bg-[length:42px_42px,auto]" />
           <div className={`grid items-center gap-8 ${showLogo ? "lg:grid-cols-[1.2fr_0.8fr]" : ""}`}>
             <div>
               <span className="accent-chip">{eyebrow}</span>
@@ -26,7 +26,7 @@ export default function PageIntro({ eyebrow, title, description, showLogo = fals
 
             {showLogo ? (
               <div className="flex justify-center lg:justify-end">
-                <div className="relative overflow-hidden rounded-[2.3rem] p-1">
+                <div className="relative overflow-hidden rounded-2xl border border-accent-500/25 bg-brand-900 p-4 shadow-accent">
                   <Image
                     src="/brand.png"
                     alt="Madal ICT Solutions logo"

@@ -16,7 +16,7 @@ export default function FeaturedWork() {
           {projects.map((project, index) => (
             <article
               key={project.title}
-              className="card-surface flex h-full flex-col p-7 transition duration-300 hover:-translate-y-1"
+              className="card-surface flex h-full flex-col p-7 transition duration-300 hover:-translate-y-1 hover:border-accent-500/35"
             >
               <div className="flex flex-wrap items-center gap-3">
                 <span className={`inline-flex w-fit rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] ${index % 2 === 0 ? "bg-brand-50 text-brand-700 dark:bg-brand-500/10 dark:text-brand-300" : "bg-accent-50 text-accent-700 dark:bg-accent-500/10 dark:text-accent-300"}`}>
@@ -32,7 +32,7 @@ export default function FeaturedWork() {
               <p className="mt-4 flex-1 text-base leading-7 text-slate-600 dark:text-slate-300">
                 {project.description}
               </p>
-              <div className="mt-6 rounded-[1.5rem] bg-slate-50 p-4 dark:bg-slate-900">
+              <div className="mt-6 rounded-xl bg-accent-50/70 p-4 dark:bg-white/5">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-600 dark:text-accent-300">
                   Result
                 </p>

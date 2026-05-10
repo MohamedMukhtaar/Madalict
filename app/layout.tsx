@@ -70,6 +70,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${manrope.variable} ${spaceGrotesk.variable} bg-slate-50 text-slate-900 antialiased transition-colors duration-300 dark:bg-brand-900 dark:text-slate-100`}
+        suppressHydrationWarning
       >
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         {children}

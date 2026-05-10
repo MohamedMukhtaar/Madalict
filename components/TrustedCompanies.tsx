@@ -3,13 +3,14 @@ import { trustedCompanies } from "@/data/siteData";
 
 export default function TrustedCompanies() {
   return (
-    <section id="partners" className="section-spacing bg-slate-50/70 dark:bg-slate-950/30">
+    <section id="partners" className="section-spacing bg-brand-900 text-white">
       <div className="section-shell">
         <SectionTitle
           eyebrow="Trusted Companies"
           title="Organizations that value reliable digital partnership"
           description="Example client and partner profiles that reflect the type of sectors we support with scalable technology solutions."
           align="center"
+          invert
         />
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
@@ -19,7 +20,7 @@ export default function TrustedCompanies() {
               className="card-surface flex items-center justify-between gap-5 p-6 transition duration-300 hover:-translate-y-1"
             >
               <div className="flex items-center gap-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-accent-500 to-amber-400 text-lg font-bold text-white shadow-sm">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent-500 text-lg font-bold text-brand-900 shadow-sm">
                   {company.name
                     .split(" ")
                     .map((part) => part[0])

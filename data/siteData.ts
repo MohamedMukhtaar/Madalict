@@ -240,7 +240,7 @@ export const trendHighlights: TrendHighlight[] = [
     stat: "62% less manual follow-up",
     image: remoteImages.dashboard,
   },
-];
+]; 
 
 export const blogPosts: BlogPost[] = [
   {
