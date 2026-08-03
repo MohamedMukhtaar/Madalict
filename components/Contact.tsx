@@ -1,6 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
-import { contactDetails, services } from "@/data/siteData";
+import ContactForm from "@/components/ContactForm";
+import Logo from "@/components/Logo";
+import { contactDetails, socialLinks } from "@/data/siteData";
 
 const contactInfo = [
   { label: "Company", value: contactDetails.companyName, icon: "company" },
@@ -13,13 +14,7 @@ function ContactInfoIcon({ icon }: { icon: string }) {
   if (icon === "company") {
     return (
       <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-accent-500/10 dark:bg-accent-500/15">
-        <Image
-          src="/brand.png"
-          alt="Madal ICT Solutions logo"
-          width={28}
-          height={28}
-          className="h-7 w-7 rounded-lg object-cover"
-        />
+        <Logo surface="auto" markOnly className="h-6" />
       </div>
     );
   }
@@ -34,7 +29,7 @@ function ContactInfoIcon({ icon }: { icon: string }) {
   };
 
   return (
-    <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-accent-500 text-white shadow-accent dark:bg-accent-400 dark:text-slate-950">
+    <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-accent-500 text-brand-900 shadow-accent dark:bg-accent-400 dark:text-slate-950">
       {icon === "email" ? (
         <svg {...commonProps}>
           <path d="M4.5 6.75 12 12l7.5-5.25" />
@@ -57,6 +52,8 @@ function ContactInfoIcon({ icon }: { icon: string }) {
 }
 
 export default function Contact() {
+  const whatsappLink = socialLinks.find((item) => item.label === "WhatsApp");
+
   return (
     <section id="contact-form" className="section-spacing">
       <div className="section-shell">
@@ -92,98 +89,15 @@ export default function Contact() {
               <Link href={`tel:${contactDetails.phoneHref}`} className="button-primary">
                 Call on Mobile
               </Link>
-              <Link href="/contact#contact-form" className="button-secondary">
-                Send Project Details
-              </Link>
+              {whatsappLink ? (
+                <Link href={whatsappLink.href} target="_blank" rel="noreferrer" className="button-secondary">
+                  Chat on WhatsApp
+                </Link>
+              ) : null}
             </div>
           </div>
 
-          <div className="card-surface p-6 sm:p-8">
-            <form className="grid gap-5">
-              <div className="grid gap-5 sm:grid-cols-2">
-                <label className="grid gap-2 text-sm font-medium text-slate-700 dark:text-slate-200">
-                  Full Name
-                  <input
-                    type="text"
-                    name="fullName"
-                    placeholder="Your full name"
-                    className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-accent-400 focus:ring-4 focus:ring-accent-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
-                  />
-                </label>
-                <label className="grid gap-2 text-sm font-medium text-slate-700 dark:text-slate-200">
-                  Company Name
-                  <input
-                    type="text"
-                    name="companyName"
-                    placeholder="Your company"
-                    className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-accent-400 focus:ring-4 focus:ring-accent-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
-                  />
-                </label>
-              </div>
-
-              <div className="grid gap-5 sm:grid-cols-2">
-                <label className="grid gap-2 text-sm font-medium text-slate-700 dark:text-slate-200">
-                  Email
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="you@example.com"
-                    className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-accent-400 focus:ring-4 focus:ring-accent-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
-                  />
-                </label>
-                <label className="grid gap-2 text-sm font-medium text-slate-700 dark:text-slate-200">
-                  Phone
-                  <input
-                    type="text"
-                    name="phone"
-                    placeholder="+252..."
-                    className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-accent-400 focus:ring-4 focus:ring-accent-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
-                  />
-                </label>
-              </div>
-
-              <div className="grid gap-5 sm:grid-cols-2">
-                <label className="grid gap-2 text-sm font-medium text-slate-700 dark:text-slate-200">
-                  Choose Service
-                  <select
-                    name="service"
-                    defaultValue=""
-                    className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-brand-400 focus:ring-4 focus:ring-brand-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
-                  >
-                    <option value="" disabled>Select a service</option>
-                    {services.map((service) => (
-                      <option key={service.slug} value={service.title}>
-                        {service.title}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-                <label className="grid gap-2 text-sm font-medium text-slate-700 dark:text-slate-200">
-                  Subject
-                  <input
-                    type="text"
-                    name="subject"
-                    placeholder="Project subject"
-                    className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brand-400 focus:ring-4 focus:ring-brand-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
-                  />
-                </label>
-              </div>
-
-              <label className="grid gap-2 text-sm font-medium text-slate-700 dark:text-slate-200">
-                Message
-                <textarea
-                  name="message"
-                  rows={6}
-                  placeholder="Tell us about your business needs, goals, and timeline"
-                  className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brand-400 focus:ring-4 focus:ring-brand-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
-                />
-              </label>
-
-              <button type="submit" className="button-primary w-fit border-0">
-                Send Message
-              </button>
-            </form>
-          </div>
+          <ContactForm />
         </div>
       </div>
     </section>

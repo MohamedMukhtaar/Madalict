@@ -30,16 +30,12 @@ export const metadata: Metadata = {
     "ICT consulting",
     "digital transformation",
   ],
-  icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
-    apple: "/brand.png",
-  },
+  // Icons and the share image come from the app/ file conventions:
+  // app/icon.svg, app/apple-icon.png, app/opengraph-image.png
   openGraph: {
     title: "Madal ICT Solutions",
     description:
       "Professional websites, custom systems, and digital products designed for growth-focused organizations.",
-    images: ["/brand.png"],
     type: "website",
   },
   twitter: {
@@ -47,7 +43,6 @@ export const metadata: Metadata = {
     title: "Madal ICT Solutions",
     description:
       "Professional websites, custom systems, and digital products designed for growth-focused organizations.",
-    images: ["/brand.png"],
   },
 };
 
@@ -69,7 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${manrope.variable} ${spaceGrotesk.variable} bg-slate-50 text-slate-900 antialiased transition-colors duration-300 dark:bg-brand-900 dark:text-slate-100`}
+        className={`${manrope.variable} ${spaceGrotesk.variable} bg-brand-50 text-slate-900 antialiased transition-colors duration-300 dark:bg-brand-900 dark:text-slate-100`}
         suppressHydrationWarning
       >
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />

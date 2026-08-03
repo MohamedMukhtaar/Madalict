@@ -1,5 +1,11 @@
 import type { Config } from "tailwindcss";
 
+/**
+ * Palette is taken from the Madal ICT brand book (Madal logo011.pdf):
+ *   navy  #011F4B  -> brand-900
+ *   cyan  #00C3FF  -> accent-500
+ *   light #E6EBF0  -> brand-100
+ */
 const config: Config = {
   darkMode: "class",
   content: [
@@ -11,38 +17,39 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          50: "#f4f4f3",
-          100: "#e4e3df",
-          200: "#c9c6bf",
-          300: "#aaa59a",
-          400: "#807b71",
-          500: "#5c574f",
-          600: "#403c36",
-          700: "#2a2723",
-          800: "#171512",
-          900: "#070707",
+          50: "#f2f6fb",
+          100: "#e6ebf0",
+          200: "#c8d6e6",
+          300: "#9eb4d0",
+          400: "#6486b3",
+          500: "#3a5f94",
+          600: "#1e4275",
+          700: "#0a3068",
+          800: "#052755",
+          900: "#011f4b",
+          950: "#010f26",
         },
         accent: {
-          50: "#fff5e8",
-          100: "#ffe7c7",
-          200: "#ffc98a",
-          300: "#ffa447",
-          400: "#ff8b1f",
-          500: "#ff7a00",
-          600: "#e46200",
-          700: "#bd4b00",
-          800: "#983b06",
-          900: "#7c3207",
+          50: "#e5f8ff",
+          100: "#ccf2ff",
+          200: "#99e5ff",
+          300: "#66d8ff",
+          400: "#33cbff",
+          500: "#00c3ff",
+          600: "#00a3d6",
+          700: "#0082ab",
+          800: "#006180",
+          900: "#004155",
         },
       },
       boxShadow: {
-        soft: "0 28px 70px -34px rgba(7, 7, 7, 0.28)",
-        glow: "0 24px 55px -22px rgba(7, 7, 7, 0.35)",
-        accent: "0 22px 48px -20px rgba(255, 122, 0, 0.42)",
+        soft: "0 28px 70px -34px rgba(1, 31, 75, 0.32)",
+        glow: "0 24px 55px -22px rgba(1, 31, 75, 0.4)",
+        accent: "0 22px 48px -20px rgba(0, 195, 255, 0.45)",
       },
       backgroundImage: {
         "hero-grid":
-          "linear-gradient(rgba(7, 7, 7, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(7, 7, 7, 0.08) 1px, transparent 1px)",
+          "linear-gradient(rgba(1, 31, 75, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(1, 31, 75, 0.08) 1px, transparent 1px)",
       },
       maxWidth: {
         "8xl": "88rem",

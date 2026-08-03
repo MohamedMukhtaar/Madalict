@@ -1,6 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
 import ContactLinks from "@/components/ContactLinks";
+import Logo from "@/components/Logo";
 
 const values = [
   {
@@ -73,18 +72,12 @@ export default function About() {
   return (
     <section className="section-spacing bg-white text-slate-950 dark:bg-brand-900 dark:text-white">
       <div className="section-shell space-y-10">
-        <section className="grid items-center gap-10 rounded-2xl border border-accent-500/20 bg-[linear-gradient(90deg,rgba(255,122,0,0.08)_1px,transparent_1px),linear-gradient(180deg,_rgba(255,255,255,0.98),_rgba(255,250,244,0.98))] bg-[length:42px_42px,auto] p-8 shadow-[0_30px_80px_-40px_rgba(7,7,7,0.18)] dark:bg-[linear-gradient(90deg,rgba(255,122,0,0.08)_1px,transparent_1px),linear-gradient(180deg,_rgba(17,16,14,0.98),_rgba(7,7,7,0.98))] dark:shadow-[0_30px_80px_-40px_rgba(255,122,0,0.18)] lg:grid-cols-[0.8fr_1.2fr] lg:p-12">
+        <section className="grid items-center gap-10 rounded-2xl border border-accent-500/20 bg-[linear-gradient(90deg,rgba(0,195,255,0.08)_1px,transparent_1px),linear-gradient(180deg,_rgba(255,255,255,0.98),_rgba(246,250,253,0.98))] bg-[length:42px_42px,auto] p-8 shadow-[0_30px_80px_-40px_rgba(1,31,75,0.18)] dark:bg-[linear-gradient(90deg,rgba(0,195,255,0.08)_1px,transparent_1px),linear-gradient(180deg,_rgba(1,31,75,0.98),_rgba(1,31,75,0.98))] dark:shadow-[0_30px_80px_-40px_rgba(0,195,255,0.18)] lg:grid-cols-[0.8fr_1.2fr] lg:p-12">
           <div className="flex justify-center">
-            <div className="relative overflow-hidden rounded-2xl bg-brand-900 p-8 shadow-[0_0_60px_-10px_rgba(255,122,0,0.24)]">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,122,0,0.18),_transparent_62%)]" />
+            <div className="relative overflow-hidden rounded-2xl bg-brand-900 p-8 shadow-[0_0_60px_-10px_rgba(0,195,255,0.24)]">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(0,195,255,0.18),_transparent_62%)]" />
               <div className="relative overflow-hidden rounded-xl border border-accent-500/25 bg-brand-900 p-10">
-                <Image
-                  src="/brand.png"
-                  alt="Madal ICT Solutions logo"
-                  width={320}
-                  height={320}
-                  className="h-auto w-[180px] object-contain sm:w-[220px]"
-                />
+                <Logo surface="navy" markOnly className="h-[150px] sm:h-[180px]" />
               </div>
             </div>
           </div>
@@ -112,7 +105,7 @@ export default function About() {
           </article>
 
           <article className="card-surface flex h-full min-h-[260px] flex-col p-7 sm:p-8">
-            <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-500 text-white shadow-accent dark:bg-accent-400 dark:text-slate-950">
+            <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-500 text-brand-900 shadow-accent dark:bg-accent-400 dark:text-slate-950">
               <ValueIcon icon="idea" />
             </div>
             <h2 className="mt-5 text-2xl font-bold tracking-tight text-slate-950 dark:text-white">
@@ -124,7 +117,7 @@ export default function About() {
           </article>
 
           <article className="card-surface flex h-full min-h-[260px] flex-col p-7 sm:p-8">
-            <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-500 text-white shadow-accent dark:bg-accent-400 dark:text-slate-950">
+            <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-500 text-brand-900 shadow-accent dark:bg-accent-400 dark:text-slate-950">
               <ValueIcon icon="award" />
             </div>
             <h2 className="mt-5 text-2xl font-bold tracking-tight text-slate-950 dark:text-white">
@@ -144,13 +137,13 @@ export default function About() {
                 key={value.title}
                 className={`relative overflow-hidden rounded-[1.75rem] border p-6 ${
                   index % 2 === 0
-                    ? "border-accent-500/20 bg-[linear-gradient(180deg,_rgba(255,250,244,0.98),_rgba(255,255,255,0.98))] shadow-[0_22px_60px_-35px_rgba(7,7,7,0.16)] dark:bg-[linear-gradient(180deg,_rgba(17,16,14,0.98),_rgba(7,7,7,0.98))] dark:shadow-[0_22px_60px_-35px_rgba(255,122,0,0.18)]"
-                    : "border-brand-500/20 bg-[linear-gradient(180deg,_rgba(255,255,255,0.98),_rgba(244,244,243,0.98))] shadow-[0_22px_60px_-35px_rgba(7,7,7,0.16)] dark:bg-[linear-gradient(180deg,_rgba(17,16,14,0.98),_rgba(7,7,7,0.98))] dark:shadow-[0_22px_60px_-35px_rgba(7,7,7,0.45)]"
+                    ? "border-accent-500/20 bg-[linear-gradient(180deg,_rgba(246,250,253,0.98),_rgba(255,255,255,0.98))] shadow-[0_22px_60px_-35px_rgba(1,31,75,0.16)] dark:bg-[linear-gradient(180deg,_rgba(1,31,75,0.98),_rgba(1,31,75,0.98))] dark:shadow-[0_22px_60px_-35px_rgba(0,195,255,0.18)]"
+                    : "border-brand-500/20 bg-[linear-gradient(180deg,_rgba(255,255,255,0.98),_rgba(238,242,247,0.98))] shadow-[0_22px_60px_-35px_rgba(1,31,75,0.16)] dark:bg-[linear-gradient(180deg,_rgba(1,31,75,0.98),_rgba(1,31,75,0.98))] dark:shadow-[0_22px_60px_-35px_rgba(1,31,75,0.45)]"
                 }`}
               >
                 <div className={`absolute left-1/2 top-0 h-28 w-28 -translate-x-1/2 rounded-b-full ${index % 2 === 0 ? "bg-accent-500/10" : "bg-brand-500/10"} blur-[2px]`} />
                 <div className="relative">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-accent-500 bg-accent-500 text-white shadow-accent">
+                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-accent-500 bg-accent-500 text-brand-900 shadow-accent">
                     <ValueIcon icon={value.icon} />
                   </div>
                   <h3 className="mt-8 text-2xl font-bold text-slate-950 dark:text-white">{value.title}</h3>

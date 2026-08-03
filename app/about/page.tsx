@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
+import Industries from "@/components/Industries";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export default function AboutPage() {
     <main id="main-content" className="overflow-hidden">
       <Navbar />
       <About />
+      <Industries />
       <Footer />
     </main>
   );

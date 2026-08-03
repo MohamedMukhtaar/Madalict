@@ -1,0 +1,51 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+  <defs>
+    <linearGradient id="bgh" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0%" stop-color="#eef6fc"/><stop offset="100%" stop-color="#cbe0f2"/>
+    </linearGradient>
+    <linearGradient id="cyh" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00c3ff"/><stop offset="100%" stop-color="#0082ab"/>
+    </linearGradient>
+    <linearGradient id="glh" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02"/>
+    </linearGradient>
+    <radialGradient id="gwh"><stop offset="0%" stop-color="#00c3ff" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#00c3ff" stop-opacity="0"/></radialGradient>
+    <pattern id="grh" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#011f4b" stroke-opacity="0.06" stroke-width="1.5" fill="none"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bgh)"/>
+  <rect width="1200" height="800" fill="url(#grh)"/>
+  <circle cx="940" cy="170" r="300" fill="url(#gwh)"/>
+  <circle cx="200" cy="660" r="260" fill="url(#gwh)"/>
+  <rect x="210" y="210" width="220" height="420" rx="34" fill="#e7f0f9" fill-opacity="1" stroke="#8fb6d8" stroke-width="3"/>
+  <rect x="228" y="244" width="184" height="342" rx="20" fill="#ffffff" fill-opacity="1" stroke="#8fb6d8" stroke-width="0"/>
+  <rect x="250" y="272" width="60" height="18" rx="9" fill="#4d7299" fill-opacity="0.4"/>
+  <rect x="250" y="308" width="128" height="10" rx="7" fill="#4d7299" fill-opacity="0.3"/>
+  <rect x="250" y="338" width="140" height="84" rx="14" fill="#e7f0f9" fill-opacity="1" stroke="#8fb6d8" stroke-width="2"/>
+  <rect x="250" y="442" width="128" height="10" rx="7" fill="#4d7299" fill-opacity="0.3"/>
+  <rect x="250" y="466" width="90" height="10" rx="7" fill="#4d7299" fill-opacity="0.3"/>
+  <rect x="250" y="500" width="140" height="34" rx="17" fill="none" fill-opacity="1" stroke="#8fb6d8" stroke-width="2"/>
+  <circle cx="320.0" cy="604" r="9" fill="#4d7299" fill-opacity="0.4"/>
+  <rect x="480" y="150" width="250" height="500" rx="34" fill="#e7f0f9" fill-opacity="1" stroke="#8fb6d8" stroke-width="3"/>
+  <rect x="498" y="184" width="214" height="422" rx="20" fill="#ffffff" fill-opacity="1" stroke="#8fb6d8" stroke-width="0"/>
+  <rect x="520" y="212" width="78" height="18" rx="9" fill="url(#cyh)"/>
+  <rect x="520" y="248" width="158" height="10" rx="7" fill="#4d7299" fill-opacity="0.3"/>
+  <rect x="520" y="278" width="170" height="84" rx="14" fill="#e7f0f9" fill-opacity="1" stroke="#8fb6d8" stroke-width="2"/>
+  <rect x="520" y="382" width="158" height="10" rx="7" fill="#4d7299" fill-opacity="0.3"/>
+  <rect x="520" y="406" width="120" height="10" rx="7" fill="#4d7299" fill-opacity="0.3"/>
+  <rect x="520" y="440" width="170" height="34" rx="17" fill="url(#cyh)"/>
+  <circle cx="605.0" cy="624" r="9" fill="#4d7299" fill-opacity="0.4"/>
+  <rect x="790" y="210" width="220" height="420" rx="34" fill="#e7f0f9" fill-opacity="1" stroke="#8fb6d8" stroke-width="3"/>
+  <rect x="808" y="244" width="184" height="342" rx="20" fill="#ffffff" fill-opacity="1" stroke="#8fb6d8" stroke-width="0"/>
+  <rect x="830" y="272" width="60" height="18" rx="9" fill="#4d7299" fill-opacity="0.4"/>
+  <rect x="830" y="308" width="128" height="10" rx="7" fill="#4d7299" fill-opacity="0.3"/>
+  <rect x="830" y="338" width="140" height="84" rx="14" fill="#e7f0f9" fill-opacity="1" stroke="#8fb6d8" stroke-width="2"/>
+  <rect x="830" y="442" width="128" height="10" rx="7" fill="#4d7299" fill-opacity="0.3"/>
+  <rect x="830" y="466" width="90" height="10" rx="7" fill="#4d7299" fill-opacity="0.3"/>
+  <rect x="830" y="500" width="140" height="34" rx="17" fill="none" fill-opacity="1" stroke="#8fb6d8" stroke-width="2"/>
+  <circle cx="900.0" cy="604" r="9" fill="#4d7299" fill-opacity="0.4"/>
+  <path d="M430 400h50M730 400h60" stroke="#00c3ff" stroke-width="3" stroke-dasharray="9 9"/>
+</svg>

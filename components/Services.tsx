@@ -43,7 +43,9 @@ export default function Services({ limit, showCta = false }: ServicesProps) {
                   {service.deliverables[0]}
                 </span>
                 <h3 className="mt-5 text-2xl font-bold tracking-tight text-slate-950 dark:text-white">
-                  {service.title}
+                  <Link href={`/services/${service.slug}`} className="transition hover:text-accent-600 dark:hover:text-accent-300">
+                    {service.title}
+                  </Link>
                 </h3>
                 <p className="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300">
                   {service.summary}
@@ -60,10 +62,13 @@ export default function Services({ limit, showCta = false }: ServicesProps) {
                 </ul>
 
                 <div className="mt-6 flex items-center justify-between border-t border-brand-100/80 pt-5 dark:border-white/10">
-                  <span className="text-sm font-medium text-slate-500 dark:text-slate-400">
-                    Tailored for modern teams
-                  </span>
-                  <Link href="/contact" className="text-sm font-semibold text-accent-600 transition hover:text-accent-700 dark:text-accent-300">
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="text-sm font-semibold text-accent-600 transition hover:text-accent-700 dark:text-accent-300"
+                  >
+                    View details
+                  </Link>
+                  <Link href="/contact" className="text-sm font-medium text-slate-500 transition hover:text-accent-600 dark:text-slate-400 dark:hover:text-accent-300">
                     Talk to us
                   </Link>
                 </div>

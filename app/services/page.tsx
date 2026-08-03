@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageIntro from "@/components/PageIntro";
 import Services from "@/components/Services";
+import WhyChooseUs from "@/components/WhyChooseUs";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -21,6 +22,7 @@ export default function ServicesPage() {
         showLogo
       />
       <Services />
+      <WhyChooseUs />
       <FeaturedWork />
       <Footer />
     </main>

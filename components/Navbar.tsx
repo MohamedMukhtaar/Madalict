@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import Logo from "@/components/Logo";
 import ThemeToggle from "@/components/ThemeToggle";
 import { navItems } from "@/data/siteData";
 
@@ -15,11 +15,11 @@ export default function Navbar({ forceDark = false }: NavbarProps) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const mobileActiveClass = forceDark
-    ? "bg-accent-500 text-white shadow-accent"
-    : "bg-accent-500 text-white shadow-accent dark:bg-accent-500 dark:text-white";
+    ? "bg-accent-500 text-brand-900 shadow-accent"
+    : "bg-accent-500 text-brand-900 shadow-accent dark:bg-accent-500 dark:text-brand-900";
   const desktopActiveClass = forceDark
     ? "text-accent-300"
-    : "text-accent-500 dark:text-accent-300";
+    : "text-accent-700 dark:text-accent-300";
 
   const handleLogoClick = () => {
     setIsOpen(false);
@@ -34,33 +34,12 @@ export default function Navbar({ forceDark = false }: NavbarProps) {
       <header className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-2xl transition-colors ${
         forceDark
           ? "border-white/10 bg-brand-900/85"
-          : "border-white/60 bg-white/80 shadow-[0_18px_60px_-40px_rgba(7,7,7,0.35)] dark:border-white/10 dark:bg-brand-900/75"
+          : "border-white/60 bg-white/80 shadow-[0_18px_60px_-40px_rgba(1,31,75,0.35)] dark:border-white/10 dark:bg-brand-900/75"
       }`}>
         <div className="section-shell">
           <nav className="flex items-center justify-between py-4">
-            <Link href="/" onClick={handleLogoClick} className="flex items-center gap-3">
-              <div className={`overflow-hidden rounded-2xl border shadow-sm ${
-                forceDark
-                  ? "border-white/10 bg-brand-900"
-                  : "border-brand-100 bg-white dark:border-white/10 dark:bg-brand-900"
-              }`}>
-                <Image
-                  src="/brand.png"
-                  alt="Madal ICT Solutions logo"
-                  width={48}
-                  height={48}
-                  className="h-12 w-12 object-cover"
-                  priority
-                />
-              </div>
-              <div>
-                <p className={`text-base font-bold tracking-tight ${forceDark ? "text-white" : "text-slate-950 dark:text-white"}`}>
-                  Madal ICT Solutions
-                </p>
-                <p className={`text-xs font-medium uppercase tracking-[0.22em] ${forceDark ? "text-accent-300" : "text-accent-500 dark:text-accent-300"}`}>
-                  Trusted Digital Delivery
-                </p>
-              </div>
+            <Link href="/" onClick={handleLogoClick} className="flex items-center" aria-label="Madal ICT Solutions home">
+              <Logo surface={forceDark ? "navy" : "auto"} className="h-10 sm:h-11" priority />
             </Link>
 
             <div className={`hidden items-center gap-8 rounded-full border px-6 py-3 lg:flex ${

@@ -44,8 +44,11 @@ export default function BlogPreview({ limit }: BlogPreviewProps) {
                 <p className="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300">
                   {post.excerpt}
                 </p>
-                <Link href="/blog" className="mt-6 inline-flex text-sm font-semibold text-accent-600 transition hover:text-accent-700 dark:text-accent-300">
-                  Read on the blog
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="mt-6 inline-flex text-sm font-semibold text-accent-600 transition hover:text-accent-700 dark:text-accent-300"
+                >
+                  Read the article
                 </Link>
               </div>
             </article>

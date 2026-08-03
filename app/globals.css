@@ -17,18 +17,18 @@ html {
 body {
   font-family: var(--font-manrope), sans-serif;
   background:
-    linear-gradient(90deg, rgba(7, 7, 7, 0.035) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(255, 122, 0, 0.12) 0%, transparent 24rem),
-    linear-gradient(180deg, #fffaf4 0%, #ffffff 42%, #f7f5f0 100%);
+    linear-gradient(90deg, rgba(1, 31, 75, 0.035) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(0, 195, 255, 0.12) 0%, transparent 24rem),
+    linear-gradient(180deg, #f6fafd 0%, #ffffff 42%, #eef2f7 100%);
   background-size: 44px 44px, auto, auto;
   min-height: 100vh;
 }
 
 html.dark body {
   background:
-    linear-gradient(90deg, rgba(255, 122, 0, 0.06) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(255, 122, 0, 0.18) 0%, transparent 24rem),
-    linear-gradient(180deg, #070707 0%, #11100e 44%, #070707 100%);
+    linear-gradient(90deg, rgba(0, 195, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(0, 195, 255, 0.16) 0%, transparent 24rem),
+    linear-gradient(180deg, #010f26 0%, #011f4b 44%, #010f26 100%);
   background-size: 44px 44px, auto, auto;
 }
 
@@ -42,18 +42,18 @@ h6 {
 }
 
 ::selection {
-  background: #ff7a00;
-  color: #ffffff;
+  background: #00c3ff;
+  color: #011f4b;
 }
 
 html.dark ::selection {
-  background: #ff7a00;
-  color: #070707;
+  background: #00c3ff;
+  color: #011f4b;
 }
 
 @layer base {
   * {
-    @apply border-slate-200 dark:border-slate-800;
+    @apply border-brand-200 dark:border-brand-800;
   }
 }
 
@@ -70,8 +70,9 @@ html.dark ::selection {
     @apply rounded-2xl border border-brand-100/80 bg-white/[0.92] shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-brand-900/[0.88] dark:shadow-none;
   }
 
+  /* Cyan is a light colour: it carries navy text, never white, for contrast. */
   .button-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-accent-500 px-6 py-3 text-sm font-semibold text-white shadow-accent transition duration-300 hover:-translate-y-0.5 hover:bg-brand-900 hover:text-white dark:bg-accent-500 dark:text-brand-900 dark:hover:bg-white dark:hover:text-brand-900;
+    @apply inline-flex items-center justify-center rounded-full bg-accent-500 px-6 py-3 text-sm font-semibold text-brand-900 shadow-accent transition duration-300 hover:-translate-y-0.5 hover:bg-brand-900 hover:text-white dark:bg-accent-500 dark:text-brand-900 dark:hover:bg-white dark:hover:text-brand-900;
   }
 
   .button-secondary {
@@ -79,6 +80,6 @@ html.dark ::selection {
   }
 
   .accent-chip {
-    @apply inline-flex rounded-full border border-accent-500/25 bg-accent-50/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-accent-700 shadow-[0_10px_24px_-18px_rgba(255,122,0,0.55)] dark:border-accent-500/35 dark:bg-accent-500/10 dark:text-accent-200;
+    @apply inline-flex rounded-full border border-accent-500/30 bg-accent-50/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-accent-700 shadow-[0_10px_24px_-18px_rgba(0,195,255,0.6)] dark:border-accent-500/35 dark:bg-accent-500/10 dark:text-accent-200;
   }
 }

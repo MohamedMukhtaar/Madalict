@@ -8,7 +8,7 @@ export default function TrustedCompanies() {
         <SectionTitle
           eyebrow="Trusted Companies"
           title="Organizations that value reliable digital partnership"
-          description="Example client and partner profiles that reflect the type of sectors we support with scalable technology solutions."
+          description="Businesses we work with across retail and clothing, supported with practical technology they can rely on day to day."
           align="center"
           invert
         />

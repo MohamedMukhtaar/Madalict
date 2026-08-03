@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Logo from "@/components/Logo";
 import { heroStats, trendHighlights } from "@/data/siteData";
 
 export default function Hero() {
@@ -8,8 +9,8 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-brand-900 pb-8 pt-8 text-white sm:pb-12">
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,122,0,0.08)_1px,transparent_1px),linear-gradient(180deg,rgba(255,122,0,0.18),rgba(7,7,7,0)_22rem)] bg-[length:44px_44px,auto]" />
-      <div className="absolute right-0 top-0 h-full w-1/2 border-l border-accent-500/15 bg-[repeating-linear-gradient(90deg,rgba(255,122,0,0.06)_0px,rgba(255,122,0,0.06)_1px,transparent_1px,transparent_32px)] opacity-70" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,195,255,0.08)_1px,transparent_1px),linear-gradient(180deg,rgba(0,195,255,0.18),rgba(1,31,75,0)_22rem)] bg-[length:44px_44px,auto]" />
+      <div className="absolute right-0 top-0 h-full w-1/2 border-l border-accent-500/15 bg-[repeating-linear-gradient(90deg,rgba(0,195,255,0.06)_0px,rgba(0,195,255,0.06)_1px,transparent_1px,transparent_32px)] opacity-70" />
       <div className="section-shell pt-8 sm:pt-10">
         <div className="relative grid items-center gap-8 lg:grid-cols-[1.02fr_0.98fr]">
           <div className="max-w-3xl">
@@ -17,7 +18,7 @@ export default function Hero() {
               Madal ICT Solutions
             </span>
             <h1 className="mt-5 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Digital systems shaped with <span className="text-accent-400">black and orange brand clarity</span>
+              Empowering businesses <span className="text-accent-400">through smart technology</span>
             </h1>
             <p className="mt-4 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
               Madal ICT Solutions designs premium websites, dependable business systems, and practical digital tools that help teams serve customers better, convert more leads, and operate with confidence.
@@ -45,7 +46,7 @@ export default function Hero() {
           </div>
 
           <div className="grid gap-5">
-            <article className="group overflow-hidden rounded-2xl border border-accent-500/25 bg-white/5 p-3 shadow-[0_35px_90px_-45px_rgba(255,122,0,0.55)] backdrop-blur-xl">
+            <article className="group overflow-hidden rounded-2xl border border-accent-500/25 bg-white/5 p-3 shadow-[0_35px_90px_-45px_rgba(0,195,255,0.55)] backdrop-blur-xl">
               <div className="relative min-h-[440px] overflow-hidden rounded-xl">
                 <Image
                   src={primaryTrend.image}
@@ -57,13 +58,7 @@ export default function Hero() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-900 via-brand-900/38 to-brand-900/10" />
                 <div className="absolute left-5 top-5 rounded-xl border border-white/10 bg-brand-900/75 p-3 backdrop-blur">
-                  <Image
-                    src="/brand.png"
-                    alt="Madal ICT Solutions mark"
-                    width={56}
-                    height={56}
-                    className="h-14 w-14 rounded-lg object-cover"
-                  />
+                  <Logo surface="navy" markOnly className="h-12" />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white sm:p-7">
                   <p className="text-sm font-semibold uppercase tracking-[0.22em] text-accent-300">
@@ -98,7 +93,7 @@ export default function Hero() {
         </div>
 
         <div className="relative z-10 mx-auto mt-12 max-w-6xl pb-10 sm:pb-12">
-          <div className="rounded-2xl border border-accent-500/25 bg-white/[0.06] px-6 py-8 shadow-[0_30px_80px_-30px_rgba(255,122,0,0.3)] backdrop-blur-xl sm:px-10 lg:px-14">
+          <div className="rounded-2xl border border-accent-500/25 bg-white/[0.06] px-6 py-8 shadow-[0_30px_80px_-30px_rgba(0,195,255,0.3)] backdrop-blur-xl sm:px-10 lg:px-14">
             <div className="grid grid-cols-1 divide-y divide-white/10 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
               {heroStats.map((stat) => (
                 <div key={stat.label} className="py-6 text-center first:pt-0 last:pb-0 sm:px-8 sm:py-2 sm:first:pt-2 sm:last:pb-2">

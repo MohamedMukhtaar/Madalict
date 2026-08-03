@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import Logo from "@/components/Logo";
 import { contactDetails, quickLinks, services, socialLinks } from "@/data/siteData";
 
 function SocialIcon({ label, className = "h-5 w-5" }: { label: string; className?: string }) {
@@ -45,6 +45,12 @@ function SocialIcon({ label, className = "h-5 w-5" }: { label: string; className
   }
 }
 
+const legalLinks = [
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
+  { label: "Contact", href: "/contact" },
+];
+
 type FooterProps = {
   forceDark?: boolean;
 };
@@ -59,24 +65,11 @@ export default function Footer({ forceDark = false }: FooterProps) {
       <div className="section-shell py-16">
         <div className="grid gap-14 lg:grid-cols-[1.4fr_0.9fr_0.8fr_1fr]">
           <div className="max-w-md">
-            <Link href="/" className="inline-flex items-center gap-4">
-              <div className={`overflow-hidden rounded-2xl border shadow-sm ${forceDark ? "border-white/10 bg-slate-900" : "border-slate-200 bg-white dark:border-white/10 dark:bg-slate-900"}`}>
-                <Image
-                  src="/brand.png"
-                  alt="Madal ICT Solutions logo"
-                  width={90}
-                  height={90}
-                  className="h-16 w-16 object-cover sm:h-20 sm:w-20"
-                />
-              </div>
-              <div>
-                <p className={`text-[2rem] font-bold tracking-[-0.04em] ${forceDark ? "text-white" : "text-slate-950 dark:text-white"}`}>
-                  Madal ICT Solutions
-                </p>
-                <p className={`mt-1 text-base font-medium ${forceDark ? "text-accent-300" : "text-accent-500 dark:text-accent-300"}`}>
-                  Professional digital systems for growing businesses
-                </p>
-              </div>
+            <Link href="/" className="inline-flex flex-col gap-4" aria-label="Madal ICT Solutions home">
+              <Logo surface={forceDark ? "navy" : "auto"} className="h-14 sm:h-16" />
+              <p className={`text-base font-medium ${forceDark ? "text-accent-300" : "text-accent-600 dark:text-accent-300"}`}>
+                Professional digital systems for growing businesses
+              </p>
             </Link>
 
             <p className={`mt-8 max-w-[26rem] text-[1.05rem] leading-8 ${forceDark ? "text-slate-300" : "text-slate-700 dark:text-slate-200"}`}>
@@ -90,7 +83,7 @@ export default function Footer({ forceDark = false }: FooterProps) {
               {featuredServices.map((service) => (
                 <Link
                   key={service.slug}
-                  href="/services"
+                  href={`/services/${service.slug}`}
                   className={`text-[1.02rem] font-medium transition ${forceDark ? "text-slate-300 hover:text-accent-300" : "text-slate-700 hover:text-accent-600 dark:text-slate-200 dark:hover:text-accent-300"}`}
                 >
                   {service.title}
@@ -146,9 +139,15 @@ export default function Footer({ forceDark = false }: FooterProps) {
         <div className={`mt-16 flex flex-col gap-4 border-t pt-7 pr-20 text-base sm:flex-row sm:items-center sm:justify-between sm:pr-0 ${forceDark ? "border-white/10 text-slate-400" : "border-slate-200 text-slate-500 dark:border-white/10 dark:text-slate-400"}`}>
           <p className={`font-medium ${forceDark ? "text-slate-300" : "text-slate-600 dark:text-slate-300"}`}>Copyright (c) {new Date().getFullYear()} {contactDetails.companyName}. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-5 sm:justify-end">
-            <span className="font-medium">Privacy Policy</span>
-            <span className="font-medium">Terms</span>
-            <span className="font-medium">Pricing</span>
+            {legalLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`font-medium transition ${forceDark ? "hover:text-accent-300" : "hover:text-accent-600 dark:hover:text-accent-300"}`}
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
