@@ -72,7 +72,7 @@ export default function Navbar() {
               <div className="hidden items-center gap-3 lg:flex">
                 <ThemeToggle />
                 <Link href="/contact" className="button-primary px-5">
-                  Start a Project
+                Let’s Talk
                 </Link>
               </div>
 
