@@ -1,3 +1,4 @@
+import Reveal from "@/components/Reveal";
 import SectionTitle from "@/components/SectionTitle";
 import { industries } from "@/data/siteData";
 
@@ -35,7 +36,7 @@ function IndustryIcon({ icon }: { icon: string }) {
           <path d="M6.5 10.7v4.6c0 1.6 2.5 2.9 5.5 2.9s5.5-1.3 5.5-2.9v-4.6" />
         </svg>
       );
-    default:
+    case "business":
       return (
         <svg {...props}>
           <path d="M3.5 20.5h17" />
@@ -43,6 +44,38 @@ function IndustryIcon({ icon }: { icon: string }) {
           <path d="M10 20.5v-5h4v5" />
         </svg>
       );
+    case "finance":
+      return (
+        <svg {...props}>
+          <path d="M3.5 9.5 12 4l8.5 5.5" />
+          <path d="M5 9.5v9.5M9.3 9.5v9.5M14.7 9.5v9.5M19 9.5v9.5" />
+          <path d="M3.5 19h17" />
+        </svg>
+      );
+    case "manufacturing":
+      return (
+        <svg {...props}>
+          <path d="M3.5 19.5V11l4.5 3V11l4.5 3V7.5l7 4v8Z" />
+          <circle cx="17.5" cy="6" r="1.6" />
+        </svg>
+      );
+    case "logistics":
+      return (
+        <svg {...props}>
+          <path d="M3.5 16.5V7.5h9v9Z" />
+          <path d="M12.5 10.5h4l3 3v3h-7Z" />
+          <circle cx="7" cy="18" r="1.6" />
+          <circle cx="16.5" cy="18" r="1.6" />
+        </svg>
+      );
+    case "nonprofit":
+      return (
+        <svg {...props}>
+          <path d="M12 20s-7-4.4-7-9.7A4 4 0 0 1 12 7.5a4 4 0 0 1 7 2.8C19 15.6 12 20 12 20Z" />
+        </svg>
+      );
+    default:
+      return null;
   }
 }
 
@@ -59,28 +92,20 @@ export default function Industries() {
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {industries.map((industry, index) => (
-            <article
-              key={industry.title}
-              className="card-surface group relative flex h-full flex-col overflow-hidden p-7 transition duration-300 hover:-translate-y-1 hover:border-accent-500/40"
-            >
-              <span
-                className="absolute right-6 top-5 text-5xl font-bold tracking-tight text-brand-900/[0.06] dark:text-white/[0.06]"
-                aria-hidden="true"
-              >
-                {String(index + 1).padStart(2, "0")}
-              </span>
+            <Reveal key={industry.title} delayMs={(index % 4) * 80} className="h-full">
+              <article className="group card-surface flex h-full flex-col p-7 transition duration-300 hover:-translate-y-1 hover:border-accent-500 hover:bg-accent-500 dark:hover:border-accent-500 dark:hover:bg-accent-500">
+                <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-accent-500 text-brand-900 shadow-accent transition-colors duration-300 group-hover:bg-brand-900 group-hover:text-white dark:group-hover:bg-brand-900">
+                  <IndustryIcon icon={industry.icon} />
+                </div>
 
-              <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-accent-500 text-brand-900 shadow-accent">
-                <IndustryIcon icon={industry.icon} />
-              </div>
-
-              <h3 className="mt-6 text-xl font-bold tracking-tight text-slate-950 dark:text-white">
-                {industry.title}
-              </h3>
-              <p className="mt-3 text-base leading-7 text-slate-600 dark:text-slate-300">
-                {industry.description}
-              </p>
-            </article>
+                <h3 className="mt-6 text-xl font-medium tracking-tight text-slate-950 transition-colors duration-300 group-hover:text-brand-900 dark:text-white dark:group-hover:text-brand-900">
+                  {industry.title}
+                </h3>
+                <p className="mt-3 text-base leading-7 text-slate-600 transition-colors duration-300 group-hover:text-brand-900/80 dark:text-slate-300 dark:group-hover:text-brand-900/80">
+                  {industry.description}
+                </p>
+              </article>
+            </Reveal>
           ))}
         </div>
       </div>

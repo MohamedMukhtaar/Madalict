@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
 import SectionTitle from "@/components/SectionTitle";
 import { services } from "@/data/siteData";
 
@@ -21,11 +22,11 @@ export default function Services({ limit, showCta = false }: ServicesProps) {
           align="center"
         />
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {visibleServices.map((service) => (
+        <div className="mt-14 grid auto-rows-fr gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {visibleServices.map((service, index) => (
+            <Reveal key={service.slug} delayMs={(index % 3) * 100} className="h-full">
             <article
-              key={service.slug}
-              className="group card-surface overflow-hidden p-3 transition duration-300 hover:-translate-y-1 hover:border-accent-500/35"
+              className="group card-surface flex h-full flex-col overflow-hidden p-3 transition duration-300 hover:-translate-y-1 hover:border-accent-500/35"
             >
               <div className="relative h-56 overflow-hidden rounded-xl">
                 <Image
@@ -38,11 +39,11 @@ export default function Services({ limit, showCta = false }: ServicesProps) {
                 <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-brand-900/55 to-transparent" />
               </div>
 
-              <div className="p-4">
-                <span className="inline-flex rounded-full border border-accent-200/70 bg-accent-50/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-accent-700 dark:border-accent-500/20 dark:bg-accent-500/10 dark:text-accent-300">
+              <div className="flex flex-1 flex-col p-4">
+                <span className="inline-flex w-fit rounded-full border border-accent-200/70 bg-accent-50/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-accent-700 dark:border-accent-500/20 dark:bg-accent-500/10 dark:text-accent-300">
                   {service.deliverables[0]}
                 </span>
-                <h3 className="mt-5 text-2xl font-bold tracking-tight text-slate-950 dark:text-white">
+                <h3 className="mt-5 text-2xl font-medium tracking-tight text-slate-950 dark:text-white">
                   <Link href={`/services/${service.slug}`} className="transition hover:text-accent-600 dark:hover:text-accent-300">
                     {service.title}
                   </Link>
@@ -61,7 +62,7 @@ export default function Services({ limit, showCta = false }: ServicesProps) {
                   ))}
                 </ul>
 
-                <div className="mt-6 flex items-center justify-between border-t border-brand-100/80 pt-5 dark:border-white/10">
+                <div className="mt-auto flex items-center justify-between border-t border-brand-100/80 pt-5 dark:border-white/10">
                   <Link
                     href={`/services/${service.slug}`}
                     className="text-sm font-semibold text-accent-600 transition hover:text-accent-700 dark:text-accent-300"
@@ -74,6 +75,7 @@ export default function Services({ limit, showCta = false }: ServicesProps) {
                 </div>
               </div>
             </article>
+            </Reveal>
           ))}
         </div>
 

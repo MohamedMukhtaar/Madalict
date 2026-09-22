@@ -38,7 +38,7 @@ export default function BlogPreview({ limit }: BlogPreviewProps) {
                   <span>{post.date}</span>
                   <span>{post.readTime}</span>
                 </div>
-                <h3 className="mt-4 text-2xl font-bold tracking-tight text-slate-950 dark:text-white">
+                <h3 className="mt-4 text-2xl font-medium tracking-tight text-slate-950 dark:text-white">
                   {post.title}
                 </h3>
                 <p className="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300">

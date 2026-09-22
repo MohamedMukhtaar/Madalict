@@ -15,9 +15,9 @@ html {
 }
 
 body {
-  font-family: var(--font-manrope), sans-serif;
+  font-family: var(--font-inter), sans-serif;
   background:
-    linear-gradient(90deg, rgba(1, 31, 75, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(2, 53, 76, 0.035) 1px, transparent 1px),
     linear-gradient(180deg, rgba(0, 195, 255, 0.12) 0%, transparent 24rem),
     linear-gradient(180deg, #f6fafd 0%, #ffffff 42%, #eef2f7 100%);
   background-size: 44px 44px, auto, auto;
@@ -27,28 +27,40 @@ body {
 html.dark body {
   background:
     linear-gradient(90deg, rgba(0, 195, 255, 0.06) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(0, 195, 255, 0.16) 0%, transparent 24rem),
-    linear-gradient(180deg, #010f26 0%, #011f4b 44%, #010f26 100%);
+    linear-gradient(180deg, rgba(0, 195, 255, 0.14) 0%, transparent 24rem),
+    linear-gradient(180deg, #011a26 0%, #02354c 44%, #011a26 100%);
   background-size: 44px 44px, auto, auto;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-space-grotesk), sans-serif;
 }
 
 ::selection {
   background: #00c3ff;
-  color: #011f4b;
+  color: #02354c;
 }
 
 html.dark ::selection {
   background: #00c3ff;
-  color: #011f4b;
+  color: #02354c;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up {
+    animation: none;
+  }
 }
 
 @layer base {
@@ -59,11 +71,11 @@ html.dark ::selection {
 
 @layer components {
   .section-shell {
-    @apply mx-auto max-w-8xl px-4 sm:px-6 lg:px-8;
+    @apply mx-auto w-[80%] max-w-[1680px];
   }
 
   .section-spacing {
-    @apply py-16 sm:py-20;
+    @apply py-14 sm:py-16;
   }
 
   .card-surface {

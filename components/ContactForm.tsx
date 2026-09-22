@@ -125,7 +125,7 @@ export default function ContactForm() {
             <path d="m5 12.5 4.5 4.5L19 7.5" />
           </svg>
         </div>
-        <h3 className="mt-6 text-2xl font-bold tracking-tight text-slate-950 dark:text-white">
+        <h3 className="mt-6 text-2xl font-medium tracking-tight text-slate-950 dark:text-white">
           Your details are ready to send
         </h3>
         <p className="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300">

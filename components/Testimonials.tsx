@@ -1,3 +1,4 @@
+import Reveal from "@/components/Reveal";
 import SectionTitle from "@/components/SectionTitle";
 import { testimonials } from "@/data/siteData";
 
@@ -20,29 +21,31 @@ export default function Testimonials() {
           align="center"
         />
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
-          {testimonials.map((testimonial) => (
-            <article key={testimonial.name} className="card-surface p-7">
-              <div
-                className="flex items-center gap-1 text-accent-600 dark:text-accent-300"
-                role="img"
-                aria-label="Rated 5 out of 5"
-              >
-                {Array.from({ length: 5 }).map((_, index) => (
-                  <StarIcon key={index} />
-                ))}
-              </div>
-              <p className="mt-6 text-base leading-7 text-slate-600 dark:text-slate-300">
-                &quot;{testimonial.quote}&quot;
-              </p>
-              <div className="mt-8 border-t border-slate-100 pt-5 dark:border-slate-800">
-                <h3 className="text-lg font-bold text-slate-950 dark:text-white">{testimonial.name}</h3>
-                <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                  {testimonial.role ? `${testimonial.role}, ` : ""}
-                  {testimonial.company}
+        <div className="mt-14 grid auto-rows-fr gap-6 lg:grid-cols-3">
+          {testimonials.map((testimonial, index) => (
+            <Reveal key={testimonial.name} delayMs={(index % 3) * 100} className="h-full">
+              <article className="card-surface flex h-full flex-col p-7">
+                <div
+                  className="flex items-center gap-1 text-accent-600 dark:text-accent-300"
+                  role="img"
+                  aria-label="Rated 5 out of 5"
+                >
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <StarIcon key={index} />
+                  ))}
+                </div>
+                <p className="mt-6 text-base leading-7 text-slate-600 dark:text-slate-300">
+                  &quot;{testimonial.quote}&quot;
                 </p>
-              </div>
-            </article>
+                <div className="mt-auto border-t border-slate-100 pt-5 dark:border-slate-800">
+                  <h3 className="text-base font-medium text-slate-950 dark:text-white">{testimonial.name}</h3>
+                  <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                    {testimonial.role ? `${testimonial.role}, ` : ""}
+                    {testimonial.company}
+                  </p>
+                </div>
+              </article>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -5,71 +5,65 @@ import Navbar from "@/components/Navbar";
 import { contactDetails } from "@/data/siteData";
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
+  title: "Terms & Conditions",
   description:
     "The terms that apply to using the Madal ICT Solutions website and to engaging us for design, development, and consulting work.",
 };
 
 const sections: LegalSection[] = [
   {
-    heading: "Using this website",
+    heading: "1. Acceptance of Terms",
     paragraphs: [
-      "You are welcome to browse this website and contact us about your project. By using the site you agree to use it lawfully and not to attempt to disrupt, damage, or gain unauthorized access to it.",
+      `By accessing ${contactDetails.companyName}' website and services, you agree to these Terms & Conditions.`,
     ],
   },
   {
-    heading: "Information on this site",
+    heading: "2. Services Provided",
     paragraphs: [
-      "We keep the content here accurate and current, but it is provided for general information. Service descriptions, timelines, and figures are indicative rather than a binding offer.",
-      "Statistics, sample projects, and client profiles shown on this website are illustrative of the kind of work we do and the sectors we support. Nothing on this site should be treated as a guarantee of a particular result.",
+      `${contactDetails.companyName} offers a range of technology services, including ICT consulting, web development, mobile app development, and specialized software systems. Use of our services implies acceptance of the terms specific to each service.`,
     ],
   },
   {
-    heading: "Project engagements",
-    paragraphs: [
-      "Any work we undertake for you is governed by a separate written agreement covering scope, deliverables, timeline, fees, and payment terms. Where that agreement differs from anything on this website, the agreement takes precedence.",
-    ],
+    heading: "3. User Responsibilities",
     bullets: [
-      "Scope, milestones, and pricing are confirmed in writing before work begins",
-      "Changes to agreed scope are quoted and approved before they are built",
-      "Timelines assume agreed review turnaround and timely access to content and systems",
+      "Compliance: Users must comply with all applicable laws.",
+      "Account Security: Users are responsible for maintaining the confidentiality of their account details.",
     ],
   },
   {
-    heading: "Intellectual property",
+    heading: "4. Intellectual Property",
     paragraphs: [
-      `The Madal ICT Solutions name, logo, and the design and content of this website belong to ${contactDetails.companyName} unless stated otherwise. Please do not reproduce them without permission.`,
-      "For client work, ownership of the delivered product transfers to you on full payment, as set out in your project agreement. We retain rights to our own underlying tools, libraries, and general know-how, and to third party components under their own licences.",
+      `All content, trademarks, and software provided by ${contactDetails.companyName} are the intellectual property of ${contactDetails.companyName}. Unauthorized use or reproduction is prohibited.`,
     ],
   },
   {
-    heading: "Confidentiality",
+    heading: "5. Limitations of Liability",
     paragraphs: [
-      "We treat business information you share with us during an engagement as confidential and use it only to deliver the work. We ask the same of you regarding our proposals and technical documentation.",
+      `${contactDetails.companyName} is not liable for any indirect or consequential losses arising from the use of our services. We do not guarantee uninterrupted access to our website or services.`,
     ],
   },
   {
-    heading: "Third party links and services",
+    heading: "6. Termination of Services",
     paragraphs: [
-      "This site links to external platforms such as WhatsApp, email, and social networks. We do not control those services and are not responsible for their content, availability, or terms.",
+      `${contactDetails.companyName} reserves the right to suspend or terminate services to any user who breaches these Terms & Conditions or engages in unlawful conduct.`,
     ],
   },
   {
-    heading: "Limitation of liability",
+    heading: "7. Modifications to Terms",
     paragraphs: [
-      "To the extent permitted by law, we are not liable for indirect or consequential loss arising from use of this website. Liability relating to project work is addressed in the written agreement for that project.",
+      `${contactDetails.companyName} may update these Terms & Conditions periodically. Continued use of our services constitutes acceptance of the updated terms.`,
     ],
   },
   {
-    heading: "Governing law",
+    heading: "8. Governing Law",
     paragraphs: [
-      `${contactDetails.companyName} operates from ${contactDetails.location}. These terms and any project agreement are governed by the laws applicable there, unless we agree otherwise in writing.`,
+      "These terms are governed by the laws of Somalia, and any disputes will be subject to the exclusive jurisdiction of the courts in Somalia.",
     ],
   },
   {
-    heading: "Changes to these terms",
+    heading: "9. Contact Information",
     paragraphs: [
-      "We may update these terms from time to time. The version published here, with the date shown above, is the one that applies.",
+      `For questions regarding these Terms & Conditions, please reach out to ${contactDetails.email}.`,
     ],
   },
 ];
@@ -80,8 +74,8 @@ export default function TermsPage() {
       <Navbar />
       <LegalPage
         eyebrow="Terms"
-        title="Terms of Service"
-        intro={`These terms cover your use of this website and the basis on which ${contactDetails.companyName} takes on design, development, and consulting work.`}
+        title="Terms & Conditions"
+        intro={`These Terms & Conditions govern your use of the ${contactDetails.companyName} website and services.`}
         sections={sections}
       />
       <Footer />

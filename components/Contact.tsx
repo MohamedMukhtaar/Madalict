@@ -62,7 +62,7 @@ export default function Contact() {
             <span className="accent-chip">
               Contact
             </span>
-            <h2 className="mt-5 text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl">
+            <h2 className="mt-5 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-3xl">
               Let&apos;s plan a digital solution that feels strong from day one
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">

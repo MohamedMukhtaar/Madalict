@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Manrope, Space_Grotesk } from "next/font/google";
+import { Inter } from "next/font/google";
 import FloatingContactButtons from "@/components/FloatingContactButtons";
 import "./globals.css";
 
-const manrope = Manrope({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-manrope",
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -64,7 +59,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${manrope.variable} ${spaceGrotesk.variable} bg-brand-50 text-slate-900 antialiased transition-colors duration-300 dark:bg-brand-900 dark:text-slate-100`}
+        className={`${inter.variable} bg-brand-50 text-slate-900 antialiased transition-colors duration-300 dark:bg-brand-900 dark:text-slate-100`}
         suppressHydrationWarning
       >
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />

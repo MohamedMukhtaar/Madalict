@@ -1,7 +1,10 @@
 import AboutPreview from "@/components/AboutPreview";
 import BlogPreview from "@/components/BlogPreview";
+import Capabilities from "@/components/Capabilities";
 import ContactLinks from "@/components/ContactLinks";
+import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
+import HelpSupport from "@/components/HelpSupport";
 import Hero from "@/components/Hero";
 import Industries from "@/components/Industries";
 import Navbar from "@/components/Navbar";
@@ -21,8 +24,11 @@ export default function Home() {
       <WhyChooseUs />
       <TrustedCompanies />
       <Testimonials />
+      <FAQ />
+      <HelpSupport />
       <BlogPreview limit={3} />
       <ContactLinks showContactCard={false} />
+      <Capabilities />
       <Footer />
     </main>
   );

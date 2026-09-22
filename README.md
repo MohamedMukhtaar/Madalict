@@ -19,9 +19,8 @@ The site runs at http://localhost:3000.
 | `npm run typecheck` | TypeScript check only, no build |
 
 > All imagery is local — WebP photos in [public/photos/](public/photos/) (see
-> [SOURCES.md](public/photos/SOURCES.md) for licensing) with drawn SVG alternatives in
-> [public/illustrations/](public/illustrations/). Nothing is hotlinked, so the site renders
-> without an internet connection.
+> [SOURCES.md](public/photos/SOURCES.md) for licensing). Nothing is hotlinked, so the site
+> renders without an internet connection.
 
 ## Structure
 
@@ -37,17 +36,21 @@ public/              Images and brand assets
 
 ## Brand
 
-Colours and logos come from the brand book (`Madal logo011.pdf`).
+Colours and typography come from the official Madal ICT Solutions Brand Identity Guidelines.
 
 | Token | Hex | Use |
 | --- | --- | --- |
-| `brand-900` | `#011F4B` | Brand navy — dark surfaces, hero, footer |
-| `brand-950` | `#010F26` | Deepest navy, gradient ends |
-| `accent-500` | `#00C3FF` | Brand cyan — buttons, highlights |
-| `brand-100` | `#E6EBF0` | Light neutral panel |
+| `brand-900` | `#02354C` | Dark Teal — dark surfaces, hero, footer |
+| `brand-950` | `#011A26` | Deepest teal, gradient ends |
+| `accent-500` | `#00C3FF` | Deep Sky Blue — buttons, highlights |
+| `brand-100` | `#E6EDF0` | Light neutral panel |
 
 Cyan is a **light** colour: it carries navy text (`text-brand-900`), never white.
 On light backgrounds use `accent-600`/`accent-700` for cyan text so it stays readable.
+
+Typography is a single family, [Inter](https://fonts.google.com/specimen/Inter),
+used for both headings and body text — set once on `body` in
+[app/globals.css](app/globals.css) and inherited everywhere.
 
 The mark contains white shapes, so the logo artwork must match the surface behind it.
 Use the `Logo` component rather than referencing the files directly:
@@ -59,10 +62,10 @@ Use the `Logo` component rather than referencing the files directly:
 <Logo surface="navy" markOnly />  {/* icon only       */}
 ```
 
-Assets in [public/brand/](public/brand/) are transparent, tightly cropped vectors extracted
-from the brand book. The favicon ([app/icon.svg](app/icon.svg)), Apple touch icon, and the
-social share image ([app/opengraph-image.png](app/opengraph-image.png)) are generated from
-the same artwork and are picked up automatically by Next.js file conventions.
+Assets in [public/brand/](public/brand/) are transparent, tightly cropped vectors. The favicon
+([app/icon.svg](app/icon.svg)), Apple touch icon, and the social share image
+([app/opengraph-image.png](app/opengraph-image.png)) are generated from the same artwork and
+are picked up automatically by Next.js file conventions.
 
 ## Imagery
 
@@ -70,30 +73,10 @@ Ten WebP photos in [public/photos/](public/photos/) fill every image slot: one h
 service images, three blog images. `next/image` optimization is on, so Next serves AVIF and
 per-device sizes from the `sizes` each component already declares.
 
-Swapping a photo means replacing the file at the same name — no code change. To use a drawn
-illustration instead, point the entry in `art` (in [data/siteData.ts](data/siteData.ts)) at
-the matching `/illustrations/*.svg`.
+Swapping a photo means replacing the file at the same name — no code change.
 
 > The image optimizer rejects SVG sources with a 400, so anything SVG must render as a plain
 > `<img>` — that is why [components/Logo.tsx](components/Logo.tsx) does not use `next/image`.
-> If you move an illustration into an image slot, set `unoptimized` on that `Image`.
-
-## Illustrations
-
-The 12 illustrations in [public/illustrations/](public/illustrations/) are one designed set:
-a navy field with a faint cyan grid, two soft glows, and a scene built from the same panel,
-bar, and dot primitives. Each is 1200×800 and 2–5 KB.
-
-To add or restyle one, edit the generator rather than hand-editing an SVG, so the set stays
-visually consistent — keep the shared frame and change only the scene:
-
-```bash
-python tools/generate-illustrations.py   # rewrites public/illustrations/
-python tools/extract-brand-logos.py      # rewrites public/brand/ from the brand PDF
-```
-
-Both scripts are deterministic and overwrite their output directory. They need
-`pymupdf` and `pillow` (`pip install pymupdf pillow`); only the logo script reads the PDF.
 
 ## Editing content
 

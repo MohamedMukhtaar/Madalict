@@ -47,44 +47,39 @@ function SocialIcon({ label, className = "h-5 w-5" }: { label: string; className
 
 const legalLinks = [
   { label: "Privacy Policy", href: "/privacy" },
-  { label: "Terms", href: "/terms" },
-  { label: "Contact", href: "/contact" },
+  { label: "Terms & Conditions", href: "/terms" },
 ];
 
-type FooterProps = {
-  forceDark?: boolean;
-};
-
-export default function Footer({ forceDark = false }: FooterProps) {
+export default function Footer() {
   const featuredServices = services.slice(0, 4);
   const iconSocials = socialLinks.filter((item) => item.label !== "Gmail");
   const gmailLink = socialLinks.find((item) => item.label === "Gmail");
 
   return (
-    <footer className={`relative border-t ${forceDark ? "border-white/10 bg-[#05070a] text-white" : "border-brand-100/70 dark:border-white/10"}`}>
-      <div className="section-shell py-16">
-        <div className="grid gap-14 lg:grid-cols-[1.4fr_0.9fr_0.8fr_1fr]">
+    <footer className="relative border-t border-brand-100/70 dark:border-white/10">
+      <div className="section-shell py-10 sm:py-12">
+        <div className="grid gap-10 lg:grid-cols-[1.4fr_0.9fr_0.8fr_1fr]">
           <div className="max-w-md">
-            <Link href="/" className="inline-flex flex-col gap-4" aria-label="Madal ICT Solutions home">
-              <Logo surface={forceDark ? "navy" : "auto"} className="h-14 sm:h-16" />
-              <p className={`text-base font-medium ${forceDark ? "text-accent-300" : "text-accent-600 dark:text-accent-300"}`}>
+            <Link href="/" className="inline-flex flex-col items-start gap-3" aria-label="Madal ICT Solutions home">
+              <Logo className="h-10 sm:h-11" />
+              <p className="text-sm font-medium text-accent-600 dark:text-accent-300">
                 Professional digital systems for growing businesses
               </p>
             </Link>
 
-            <p className={`mt-8 max-w-[26rem] text-[1.05rem] leading-8 ${forceDark ? "text-slate-300" : "text-slate-700 dark:text-slate-200"}`}>
+            <p className="mt-5 max-w-[26rem] text-sm leading-6 text-slate-700 dark:text-slate-200">
               We design polished websites, dependable systems, and growth-ready digital tools that help organizations look stronger, load faster, and convert with more confidence.
             </p>
           </div>
 
           <div>
-            <h3 className={`text-[1.45rem] font-semibold tracking-[-0.03em] ${forceDark ? "text-white" : "text-slate-950 dark:text-white"}`}>Services</h3>
-            <div className="mt-7 flex flex-col gap-4">
+            <h3 className="text-base font-medium tracking-tight text-slate-950 dark:text-white">Services</h3>
+            <div className="mt-4 flex flex-col gap-2.5">
               {featuredServices.map((service) => (
                 <Link
                   key={service.slug}
                   href={`/services/${service.slug}`}
-                  className={`text-[1.02rem] font-medium transition ${forceDark ? "text-slate-300 hover:text-accent-300" : "text-slate-700 hover:text-accent-600 dark:text-slate-200 dark:hover:text-accent-300"}`}
+                  className="text-sm font-medium text-slate-700 transition hover:text-accent-600 dark:text-slate-200 dark:hover:text-accent-300"
                 >
                   {service.title}
                 </Link>
@@ -93,13 +88,13 @@ export default function Footer({ forceDark = false }: FooterProps) {
           </div>
 
           <div>
-            <h3 className={`text-[1.45rem] font-semibold tracking-[-0.03em] ${forceDark ? "text-white" : "text-slate-950 dark:text-white"}`}>Pages</h3>
-            <div className="mt-7 flex flex-col gap-4">
+            <h3 className="text-base font-medium tracking-tight text-slate-950 dark:text-white">Pages</h3>
+            <div className="mt-4 flex flex-col gap-2.5">
               {quickLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-[1.02rem] font-medium transition ${forceDark ? "text-slate-300 hover:text-accent-300" : "text-slate-700 hover:text-accent-600 dark:text-slate-200 dark:hover:text-accent-300"}`}
+                  className="text-sm font-medium text-slate-700 transition hover:text-accent-600 dark:text-slate-200 dark:hover:text-accent-300"
                 >
                   {link.label}
                 </Link>
@@ -108,10 +103,10 @@ export default function Footer({ forceDark = false }: FooterProps) {
           </div>
 
           <div>
-            <h3 className={`text-[1.45rem] font-semibold tracking-[-0.03em] ${forceDark ? "text-white" : "text-slate-950 dark:text-white"}`}>Contact</h3>
-            <div className={`mt-7 space-y-4 text-[1.02rem] ${forceDark ? "text-slate-300" : "text-slate-700 dark:text-slate-200"}`}>
+            <h3 className="text-base font-medium tracking-tight text-slate-950 dark:text-white">Contact</h3>
+            <div className="mt-4 space-y-2.5 text-sm text-slate-700 dark:text-slate-200">
               {gmailLink ? (
-                <Link href={gmailLink.href} className={`block font-medium transition ${forceDark ? "hover:text-accent-300" : "hover:text-accent-600 dark:hover:text-accent-300"}`}>
+                <Link href={gmailLink.href} className="block font-medium transition hover:text-accent-600 dark:hover:text-accent-300">
                   {contactDetails.email}
                 </Link>
               ) : null}
@@ -119,7 +114,7 @@ export default function Footer({ forceDark = false }: FooterProps) {
               <p>{contactDetails.location}</p>
             </div>
 
-            <div className={`mt-9 flex flex-wrap items-center gap-5 ${forceDark ? "text-white" : "text-slate-900 dark:text-white"}`}>
+            <div className="mt-5 flex flex-wrap items-center gap-4 text-slate-900 dark:text-white">
               {iconSocials.map((item) => (
                 <Link
                   key={item.label}
@@ -127,23 +122,23 @@ export default function Footer({ forceDark = false }: FooterProps) {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={item.label}
-                  className={`transition hover:-translate-y-0.5 ${forceDark ? "hover:text-accent-300" : "hover:text-accent-600 dark:hover:text-accent-300"}`}
+                  className="transition hover:-translate-y-0.5 hover:text-accent-600 dark:hover:text-accent-300"
                 >
-                  <SocialIcon label={item.label} className="h-7 w-7" />
+                  <SocialIcon label={item.label} className="h-5 w-5" />
                 </Link>
               ))}
             </div>
           </div>
         </div>
 
-        <div className={`mt-16 flex flex-col gap-4 border-t pt-7 pr-20 text-base sm:flex-row sm:items-center sm:justify-between sm:pr-0 ${forceDark ? "border-white/10 text-slate-400" : "border-slate-200 text-slate-500 dark:border-white/10 dark:text-slate-400"}`}>
-          <p className={`font-medium ${forceDark ? "text-slate-300" : "text-slate-600 dark:text-slate-300"}`}>Copyright (c) {new Date().getFullYear()} {contactDetails.companyName}. All rights reserved.</p>
-          <div className="flex flex-wrap items-center gap-5 sm:justify-end">
+        <div className="mt-8 flex flex-col gap-3 border-t border-slate-200 pr-16 pt-5 text-sm text-slate-500 dark:border-white/10 dark:text-slate-400 sm:flex-row sm:items-center sm:justify-between sm:pr-0">
+          <p className="font-medium text-slate-600 dark:text-slate-300">Copyright (c) {new Date().getFullYear()} {contactDetails.companyName}. All rights reserved.</p>
+          <div className="flex flex-wrap items-center gap-4 sm:justify-end">
             {legalLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`font-medium transition ${forceDark ? "hover:text-accent-300" : "hover:text-accent-600 dark:hover:text-accent-300"}`}
+                className="font-medium transition hover:text-accent-600 dark:hover:text-accent-300"
               >
                 {link.label}
               </Link>

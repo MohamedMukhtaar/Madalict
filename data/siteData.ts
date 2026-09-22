@@ -12,14 +12,6 @@ export type Service = {
   deliverables: string[];
 };
 
-export type Project = {
-  title: string;
-  description: string;
-  category: string;
-  service: string;
-  result: string;
-};
-
 export type Company = {
   name: string;
   industry: string;
@@ -36,13 +28,6 @@ export type Testimonial = {
 export type SocialLink = {
   label: string;
   href: string;
-};
-
-export type TrendHighlight = {
-  title: string;
-  description: string;
-  stat: string;
-  image: string;
 };
 
 export type BlogPost = {
@@ -72,9 +57,6 @@ export const heroStats = [
  * Photography in public/photos: sourced from Unsplash (free for commercial use,
  * no attribution required), centre-cropped to each slot's aspect ratio and
  * encoded as WebP. All ten together are under 1 MB.
- *
- * The matching SVG illustration set is still in public/illustrations if you
- * prefer drawn artwork for any slot — swap the path and nothing else changes.
  */
 const art = {
   web: "/photos/web-development.webp",
@@ -83,13 +65,9 @@ const art = {
   operations: "/photos/custom-business-systems.webp",
   database: "/photos/database-solutions.webp",
   consulting: "/photos/it-consulting.webp",
-  dashboard: "/photos/hero.webp",
   blogTrust: "/photos/blog-trust.webp",
   blogWorkflows: "/photos/blog-workflows.webp",
   blogMobile: "/photos/blog-mobile-teams.webp",
-  // Not rendered today: the second and third trend cards are text only.
-  mobileTrend: "/illustrations/mobile-trend.svg",
-  automation: "/illustrations/automation-trend.svg",
 };
 
 export const services: Service[] = [
@@ -155,49 +133,6 @@ export const services: Service[] = [
   },
 ];
 
-export const projects: Project[] = [
-  {
-    title: "University Management System",
-    description:
-      "An academic operations platform covering admissions, student records, departments, results, and reporting.",
-    category: "Education Tech",
-    service: "Custom Business Systems",
-    result: "Centralized academic workflows and reduced manual follow-up across departments.",
-  },
-  {
-    title: "Business Website Platform",
-    description:
-      "A scalable corporate web platform designed to strengthen visibility, engagement, and lead generation.",
-    category: "Web Platform",
-    service: "Web Development",
-    result: "Sharper online presence with a clearer customer journey and stronger inquiry conversion.",
-  },
-  {
-    title: "SMS Communication System",
-    description:
-      "A smart bulk messaging and alerts system for announcements, reminders, and customer communication.",
-    category: "Communications",
-    service: "Mobile App Development",
-    result: "Faster outreach for time-sensitive updates and automated reminders.",
-  },
-  {
-    title: "Inventory and Accounting System",
-    description:
-      "A centralized solution for stock control, invoicing, purchase tracking, and financial visibility.",
-    category: "Business Operations",
-    service: "Database Solutions",
-    result: "More accurate records and easier day-to-day operational reporting.",
-  },
-  {
-    title: "Complaint Management System",
-    description:
-      "A digital case tracking workflow that improves customer issue resolution and accountability.",
-    category: "Customer Service",
-    service: "IT Consulting",
-    result: "Better case visibility, ownership, and response times across support teams.",
-  },
-];
-
 export const trustedCompanies: Company[] = [
   { name: "Dubai Collection", industry: "Retail" },
   { name: "Isfahan Clothes", industry: "Clothing" },
@@ -255,6 +190,45 @@ export const industries = [
     description: "Scalable digital solutions designed to help growing businesses succeed.",
     icon: "business",
   },
+  {
+    title: "Finance & Banking",
+    description: "Secure, compliant systems that support transactions, records, and reporting.",
+    icon: "finance",
+  },
+  {
+    title: "Manufacturing",
+    description: "Digital tools that improve production tracking, inventory, and supply coordination.",
+    icon: "manufacturing",
+  },
+  {
+    title: "Logistics & Transport",
+    description: "Systems that keep fleets, deliveries, and dispatch running on schedule.",
+    icon: "logistics",
+  },
+  {
+    title: "NGOs & Nonprofits",
+    description: "Practical platforms for programme tracking, reporting, and donor communication.",
+    icon: "nonprofit",
+  },
+];
+
+/** Broader capability areas beyond the core service list. */
+export const capabilities = [
+  {
+    title: "Comprehensive Software Solutions",
+    description: "End-to-end software built around your workflow, from the first line of code to long-term maintenance.",
+    icon: "code",
+  },
+  {
+    title: "Creative Branding & Marketing",
+    description: "Visual identity and digital marketing support that keeps your brand consistent across every channel.",
+    icon: "brand",
+  },
+  {
+    title: "Reliable Cloud Services",
+    description: "Cloud hosting, backups, and infrastructure management that keeps your systems available and secure.",
+    icon: "cloud",
+  },
 ];
 
 /** Why clients stay with us, from the company profile. */
@@ -284,30 +258,6 @@ export const whyChooseUs = [
     icon: "support",
   },
 ];
-
-export const trendHighlights: TrendHighlight[] = [
-  {
-    title: "A sharper digital front door",
-    description:
-      "Organizations now expect their website to handle trust, inquiries, product clarity, and early qualification instead of acting like a static brochure.",
-    stat: "71% stronger first impression",
-    image: art.dashboard,
-  },
-  {
-    title: "Mobile-led service delivery",
-    description:
-      "More businesses are serving teams and customers through mobile-first tools that reduce waiting, confusion, and repeated manual calls.",
-    stat: "3x more mobile actions",
-    image: art.mobileTrend,
-  },
-  {
-    title: "Operational calm through automation",
-    description:
-      "The best systems are removing repetitive admin work while keeping visibility, approvals, and reporting clean for management.",
-    stat: "62% less manual follow-up",
-    image: art.automation,
-  },
-]; 
 
 export const blogPosts: BlogPost[] = [
   {
@@ -682,3 +632,32 @@ export const blogContent: Record<string, BlogContent> = {
 };
 
 export const legalUpdated = "August 3, 2026";
+
+/** General questions shown on the homepage FAQ section. */
+export const homeFaqs = [
+  {
+    question: "What services does Madal ICT Solutions offer?",
+    answer:
+      "We build websites, mobile apps, custom business systems, and database solutions, and provide UI/UX design and IT consulting. Most clients start with one service and expand as their needs grow.",
+  },
+  {
+    question: "How long does a typical project take?",
+    answer:
+      "It depends on scope. A focused website usually takes three to six weeks, while custom systems and mobile apps typically run six to twelve weeks. We confirm a realistic timeline during discovery before any work begins.",
+  },
+  {
+    question: "Do you work with businesses outside Somalia?",
+    answer:
+      "Yes. We are based in Mogadishu but deliver projects remotely for clients in other countries, with regular check-ins by call, email, or WhatsApp throughout the engagement.",
+  },
+  {
+    question: "What happens after the project launches?",
+    answer:
+      "Our partnership continues after handover. We offer ongoing technical support, small adjustments, and guidance so your system keeps running smoothly as your business changes.",
+  },
+  {
+    question: "How much does a project cost?",
+    answer:
+      "Pricing depends on scope, features, and timeline. Book a free consultation and we will give you a clear estimate before any commitment is required.",
+  },
+];

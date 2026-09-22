@@ -12,71 +12,51 @@ export const metadata: Metadata = {
 
 const sections: LegalSection[] = [
   {
-    heading: "Information we collect",
+    heading: "Information We Collect",
     paragraphs: [
-      "We only collect what you choose to give us. This website does not require an account and does not ask for payment details.",
-    ],
-    bullets: [
-      "Details you enter in the contact form: your name, company, email, phone number, selected service, and message",
-      "Information you share directly with us by email, phone, or WhatsApp",
-      "Project information you provide to us during an engagement",
+      "We collect personal information that you provide to us such as your name, email address, and phone number when you submit a contact form or sign up for our newsletter. We also collect information about your visit to our website, including your IP address, browser type, and the pages you visit.",
     ],
   },
   {
-    heading: "How the contact form works",
+    heading: "Use of Information",
     paragraphs: [
-      "Our contact form does not store your details on a server. When you submit it, the details you typed are composed into a message and opened in WhatsApp or your own email application. Nothing is sent until you press send there.",
-      "This means your message travels through whichever service you choose to send it with, and that service's own privacy terms apply to it in transit.",
+      "We use the information we collect to provide you with our services, respond to your inquiries, and send you marketing communications. We may also use your information to improve our website and to comply with legal obligations.",
     ],
   },
   {
-    heading: "How we use your information",
-    bullets: [
-      "To respond to your inquiry and discuss the work you are asking about",
-      "To prepare proposals, estimates, and project documentation",
-      "To deliver, support, and maintain services you have engaged us for",
-      "To keep ordinary business records such as correspondence and invoices",
-    ],
-  },
-  {
-    heading: "What we do not do",
-    bullets: [
-      "We do not sell, rent, or trade your personal information",
-      "We do not add you to marketing lists without you asking us to",
-      "We do not share client project data with other clients",
-    ],
-  },
-  {
-    heading: "Cookies and analytics",
+    heading: "Protection of Information",
     paragraphs: [
-      "This website does not set advertising or tracking cookies. Your light or dark theme preference is stored locally in your own browser and is never transmitted to us.",
-      "If we add analytics in future, we will update this page before doing so.",
+      "We take appropriate measures to protect your personal information from unauthorized access, disclosure, alteration, or destruction. We use industry-standard security measures such as SSL encryption to protect your data during transmission.",
     ],
   },
   {
-    heading: "Third party services",
+    heading: "Disclosure of Information",
     paragraphs: [
-      "Some parts of this site rely on external providers, such as the hosting platform that serves the website and the image and font services used to display it. These providers may process technical data such as your IP address in order to deliver content to your browser.",
-      "Links to WhatsApp, email, and social platforms take you to services operated by other companies, each governed by their own privacy terms.",
+      "We do not share your personal information with third parties except as required by law or as necessary to provide our services. We may share your information with our trusted partners who assist us in operating our website or providing our services.",
     ],
   },
   {
-    heading: "Data retention and security",
+    heading: "Cookies",
     paragraphs: [
-      "We keep correspondence and project records for as long as we need them for the engagement and for normal business and accounting purposes, then remove them.",
-      "We take reasonable technical and organizational care to protect information in our possession. No method of transmission over the internet is completely secure, so we cannot guarantee absolute security.",
+      "We use cookies and other similar technologies to collect information about your visit to our website. You may disable cookies in your browser settings, but please note that some features of our website may not function properly without cookies.",
     ],
   },
   {
-    heading: "Your choices",
+    heading: "Your Rights",
     paragraphs: [
-      `You can ask us what information we hold about you, ask us to correct it, or ask us to delete it. Write to ${contactDetails.email} and we will respond.`,
+      "You have the right to access, update, and delete your personal information. You may also object to our use of your personal information for marketing purposes. If you wish to exercise any of these rights, please contact us using the information below.",
     ],
   },
   {
-    heading: "Changes to this policy",
+    heading: "Updates to Privacy Policy",
     paragraphs: [
-      "If we change how we handle information, we will update this page and revise the date shown above.",
+      "We may update this privacy policy from time to time. We will notify you of any changes by posting the new privacy policy on our website. You are advised to review this privacy policy periodically for any changes.",
+    ],
+  },
+  {
+    heading: "Contact Us",
+    paragraphs: [
+      `If you have any questions or concerns about this privacy policy or our use of your personal information, please contact us at ${contactDetails.email}.`,
     ],
   },
 ];
@@ -88,7 +68,7 @@ export default function PrivacyPage() {
       <LegalPage
         eyebrow="Privacy"
         title="Privacy Policy"
-        intro={`This policy explains what ${contactDetails.companyName} does with the information you share through this website and during our work together.`}
+        intro={`At ${contactDetails.companyName}, we take your privacy seriously. This privacy policy explains how we collect, use, and protect your personal information.`}
         sections={sections}
       />
       <Footer />

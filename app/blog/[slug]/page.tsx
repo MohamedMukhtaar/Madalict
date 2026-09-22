@@ -51,41 +51,37 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
       <Navbar />
 
       <article>
-        <section className="relative overflow-hidden pt-10">
+        <section className="pt-14 sm:pt-16">
           <div className="section-shell">
-            <div className="card-surface relative overflow-hidden p-6 sm:p-8 lg:p-10">
-              <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(0,195,255,0.08)_1px,transparent_1px),linear-gradient(180deg,rgba(0,195,255,0.12),transparent)] bg-[length:42px_42px,auto]" />
+            <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+              <Link href="/blog" className="font-medium transition hover:text-accent-600 dark:hover:text-accent-300">
+                Blog
+              </Link>
+              <span aria-hidden="true">/</span>
+              <span className="font-medium text-slate-700 dark:text-slate-200">{post.category}</span>
+            </nav>
 
-              <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-                <Link href="/blog" className="font-medium transition hover:text-accent-600 dark:hover:text-accent-300">
-                  Blog
-                </Link>
-                <span aria-hidden="true">/</span>
-                <span className="font-semibold text-slate-700 dark:text-slate-200">{post.category}</span>
-              </nav>
+            <h1 className="mt-6 max-w-4xl text-2xl font-medium tracking-tight text-slate-950 dark:text-white sm:text-3xl">
+              {post.title}
+            </h1>
 
-              <h1 className="mt-6 max-w-4xl text-4xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">
-                {post.title}
-              </h1>
+            <div className="mt-6 flex flex-wrap items-center gap-3 text-xs font-medium uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+              <span>{post.category}</span>
+              <span aria-hidden="true">&middot;</span>
+              <span>{post.date}</span>
+              <span aria-hidden="true">&middot;</span>
+              <span>{post.readTime}</span>
+            </div>
 
-              <div className="mt-6 flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
-                <span>{post.category}</span>
-                <span aria-hidden="true">&middot;</span>
-                <span>{post.date}</span>
-                <span aria-hidden="true">&middot;</span>
-                <span>{post.readTime}</span>
-              </div>
-
-              <div className="relative mt-8 h-64 overflow-hidden rounded-2xl sm:h-96">
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1280px) 100vw, 1100px"
-                  priority
-                />
-              </div>
+            <div className="relative mt-8 h-64 overflow-hidden rounded-2xl sm:h-96">
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1280px) 100vw, 1100px"
+                priority
+              />
             </div>
           </div>
         </section>
@@ -98,7 +94,7 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
 
                 {content.sections.map((section) => (
                   <section key={section.heading} className="mt-12">
-                    <h2 className="text-2xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-3xl">
+                    <h2 className="text-2xl font-medium tracking-tight text-slate-950 dark:text-white sm:text-3xl">
                       {section.heading}
                     </h2>
                     {section.paragraphs.map((paragraph) => (
@@ -110,9 +106,9 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
                 ))}
               </div>
 
-              <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
-                <div className="card-surface p-6 sm:p-7">
-                  <h2 className="text-xl font-bold tracking-tight text-slate-950 dark:text-white">Key takeaways</h2>
+              <aside className="space-y-10 lg:sticky lg:top-28 lg:self-start">
+                <div>
+                  <h2 className="text-xl font-medium tracking-tight text-slate-950 dark:text-white">Key takeaways</h2>
                   <ul className="mt-5 space-y-4 text-base leading-7 text-slate-600 dark:text-slate-300">
                     {content.takeaways.map((takeaway) => (
                       <li key={takeaway} className="flex items-start gap-3">
@@ -127,8 +123,8 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
                   </ul>
                 </div>
 
-                <div className="card-surface p-6 sm:p-7">
-                  <h2 className="text-xl font-bold tracking-tight text-slate-950 dark:text-white">
+                <div>
+                  <h2 className="text-xl font-medium tracking-tight text-slate-950 dark:text-white">
                     Facing this in your own organization?
                   </h2>
                   <p className="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300">
@@ -146,7 +142,7 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
 
       <section className="section-spacing bg-white/[0.55] dark:bg-brand-900">
         <div className="section-shell">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl">
+          <h2 className="text-2xl font-medium tracking-tight text-slate-950 dark:text-white sm:text-3xl">
             More from the blog
           </h2>
 
@@ -167,11 +163,11 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-4">
-                  <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+                  <div className="flex flex-wrap items-center gap-3 text-xs font-medium uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
                     <span>{item.category}</span>
                     <span>{item.readTime}</span>
                   </div>
-                  <h3 className="mt-4 text-xl font-bold tracking-tight text-slate-950 dark:text-white">{item.title}</h3>
+                  <h3 className="mt-4 text-xl font-medium tracking-tight text-slate-950 dark:text-white">{item.title}</h3>
                   <p className="mt-3 flex-1 text-base leading-7 text-slate-600 dark:text-slate-300">{item.excerpt}</p>
                   <span className="mt-5 text-sm font-semibold text-accent-600 dark:text-accent-300">Read article</span>
                 </div>

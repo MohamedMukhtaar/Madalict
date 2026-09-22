@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+
 type SectionTitleProps = {
   eyebrow: string;
   title: string;
@@ -18,16 +20,16 @@ export default function SectionTitle({
   const descriptionClass = invert ? "text-slate-300" : "text-slate-600 dark:text-slate-300";
 
   return (
-    <div className={`space-y-4 ${alignment}`}>
+    <Reveal className={`space-y-4 ${alignment}`}>
       <span className="accent-chip">
         {eyebrow}
       </span>
-      <h2 className={`text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl ${titleClass}`}>
+      <h2 className={`text-2xl font-semibold tracking-tight sm:text-3xl lg:text-4xl ${titleClass}`}>
         {title}
       </h2>
       <p className={`text-base leading-7 sm:text-lg ${descriptionClass}`}>
         {description}
       </p>
-    </div>
+    </Reveal>
   );
 }

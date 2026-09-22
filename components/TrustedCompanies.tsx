@@ -3,14 +3,13 @@ import { trustedCompanies } from "@/data/siteData";
 
 export default function TrustedCompanies() {
   return (
-    <section id="partners" className="section-spacing bg-brand-900 text-white">
+    <section id="partners" className="section-spacing bg-white/[0.55] dark:bg-brand-900">
       <div className="section-shell">
         <SectionTitle
           eyebrow="Trusted Companies"
           title="Organizations that value reliable digital partnership"
           description="Businesses we work with across retail and clothing, supported with practical technology they can rely on day to day."
           align="center"
-          invert
         />
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
@@ -28,7 +27,7 @@ export default function TrustedCompanies() {
                     .join("")}
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-slate-950 dark:text-white">{company.name}</h3>
+                  <h3 className="text-base font-medium text-slate-950 dark:text-white">{company.name}</h3>
                   <p className="text-sm text-slate-500 dark:text-slate-400">{company.industry}</p>
                 </div>
               </div>

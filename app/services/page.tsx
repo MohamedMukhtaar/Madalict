@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import FeaturedWork from "@/components/FeaturedWork";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageIntro from "@/components/PageIntro";
@@ -18,12 +17,10 @@ export default function ServicesPage() {
       <PageIntro
         eyebrow="Services"
         title="Detailed ICT services designed to feel polished and dependable"
-        description="The Services page now carries the project examples as well, so visitors can connect each offer to a practical business result without feeling lost."
-        showLogo
+        description="Every offer connects a practical business result to the way we deliver it, so visitors know exactly what to expect."
       />
       <Services />
       <WhyChooseUs />
-      <FeaturedWork />
       <Footer />
     </main>
   );

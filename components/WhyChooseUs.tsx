@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
 import { deliveryProcess, whyChooseUs } from "@/data/siteData";
 
 function ReasonIcon({ icon }: { icon: string }) {
@@ -49,15 +50,15 @@ function ReasonIcon({ icon }: { icon: string }) {
 
 export default function WhyChooseUs() {
   return (
-    <section className="section-spacing bg-brand-900 text-white">
+    <section className="section-spacing bg-white/[0.55] dark:bg-brand-900">
       <div className="section-shell">
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
-          <div className="lg:sticky lg:top-28 lg:self-start">
-            <span className="accent-chip bg-accent-500/10 text-accent-200">Why Choose Madal</span>
-            <h2 className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+          <Reveal className="lg:sticky lg:top-28 lg:self-start">
+            <span className="accent-chip">Why Choose Madal</span>
+            <h2 className="mt-5 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-3xl lg:text-4xl">
               Every successful business needs technology that works for them, not against them
             </h2>
-            <p className="mt-5 text-base leading-8 text-slate-300 sm:text-lg">
+            <p className="mt-5 text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">
               We were founded on a simple belief: technology should simplify operations, improve
               productivity, and create opportunities for growth.
             </p>
@@ -70,42 +71,41 @@ export default function WhyChooseUs() {
                 About Madal
               </Link>
             </div>
-          </div>
+          </Reveal>
 
-          <div>
-            <div className="grid gap-5 sm:grid-cols-2">
-              {whyChooseUs.map((reason) => (
-                <article
-                  key={reason.title}
-                  className="rounded-2xl border border-white/10 bg-white/[0.06] p-6 shadow-soft backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-accent-500/40"
-                >
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-500 text-brand-900 shadow-accent">
+          <div className="space-y-4">
+            {whyChooseUs.map((reason, index) => (
+              <Reveal key={reason.title} delayMs={(index % 2) * 100}>
+                <article className="group flex items-start gap-4 rounded-xl border border-brand-100 bg-white p-5 transition duration-300 hover:-translate-y-0.5 hover:border-accent-500/40 dark:border-white/10 dark:bg-brand-900/40">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent-50 text-accent-600 transition-colors duration-300 group-hover:bg-accent-500 group-hover:text-brand-900 dark:bg-accent-500/10 dark:text-accent-300">
                     <ReasonIcon icon={reason.icon} />
                   </div>
-                  <h3 className="mt-5 text-lg font-bold tracking-tight text-white">{reason.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-slate-300">{reason.description}</p>
+                  <div>
+                    <h3 className="text-base font-medium tracking-tight text-slate-950 dark:text-white">{reason.title}</h3>
+                    <p className="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-300">{reason.description}</p>
+                  </div>
                 </article>
-              ))}
-            </div>
-
-            <div className="mt-10 rounded-2xl border border-accent-500/25 bg-white/[0.04] p-6 sm:p-8">
-              <h3 className="text-lg font-bold tracking-tight text-white">How a project runs</h3>
-              <ol className="mt-6 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-                {deliveryProcess.map((step, index) => (
-                  <li key={step.title}>
-                    <div className="flex items-center gap-3">
-                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent-500 text-sm font-bold text-brand-900">
-                        {index + 1}
-                      </span>
-                      <span className="text-sm font-semibold text-white">{step.title}</span>
-                    </div>
-                    <p className="mt-3 text-sm leading-6 text-slate-400">{step.description}</p>
-                  </li>
-                ))}
-              </ol>
-            </div>
+              </Reveal>
+            ))}
           </div>
         </div>
+
+        <Reveal className="mt-10 rounded-2xl border border-accent-500/20 bg-accent-50/50 p-6 dark:border-accent-500/25 dark:bg-white/[0.04] sm:p-8">
+          <h3 className="text-lg font-medium tracking-tight text-slate-950 dark:text-white">How a project runs</h3>
+          <ol className="mt-6 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+            {deliveryProcess.map((step, index) => (
+              <li key={step.title}>
+                <div className="flex items-center gap-3">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent-500 text-sm font-bold text-brand-900">
+                    {index + 1}
+                  </span>
+                  <span className="text-sm font-medium text-slate-800 dark:text-white">{step.title}</span>
+                </div>
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400">{step.description}</p>
+              </li>
+            ))}
+          </ol>
+        </Reveal>
       </div>
     </section>
   );
