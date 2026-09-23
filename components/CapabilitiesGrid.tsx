@@ -21,7 +21,7 @@ export default function CapabilitiesGrid() {
           <p className="text-base leading-7 text-ink dark:text-slate-300 sm:text-lg">
             Alongside our core services, our team is ready to support the broader work that keeps your business moving.
           </p>
-          <Link href="/contact" className="button-primary shrink-0">
+          <Link href="/contact" className="button-primary shrink-0 text-white dark:text-white">
             Get Started
           </Link>
         </div>

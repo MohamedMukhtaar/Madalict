@@ -52,20 +52,19 @@ Typography is a single family, [Inter](https://fonts.google.com/specimen/Inter),
 used for both headings and body text — set once on `body` in
 [app/globals.css](app/globals.css) and inherited everywhere.
 
-The mark contains white shapes, so the logo artwork must match the surface behind it.
-Use the `Logo` component rather than referencing the files directly:
+The icon is a single self-contained circular badge (`public/brand/logo-badge.png`), so it reads
+on any background without light/navy variants; only the wordmark text color adapts to the
+surface behind it. Use the `Logo` component rather than referencing the file directly:
 
 ```tsx
-<Logo />                          {/* auto: swaps light/navy with the theme */}
-<Logo surface="navy" />           {/* on navy panels  */}
-<Logo surface="cyan" />           {/* on cyan panels  */}
-<Logo surface="navy" markOnly />  {/* icon only       */}
+<Logo />                          {/* auto: text swaps light/navy with the theme */}
+<Logo surface="navy" />           {/* white wordmark, for navy panels */}
+<Logo surface="cyan" />           {/* navy wordmark, for cyan panels  */}
+<Logo markOnly />                 {/* icon only, no wordmark          */}
 ```
 
-Assets in [public/brand/](public/brand/) are transparent, tightly cropped vectors. The favicon
-([app/icon.svg](app/icon.svg)), Apple touch icon, and the social share image
-([app/opengraph-image.png](app/opengraph-image.png)) are generated from the same artwork and
-are picked up automatically by Next.js file conventions.
+The favicon ([app/icon.png](app/icon.png)) and Apple touch icon are generated from the same
+badge artwork and are picked up automatically by Next.js file conventions.
 
 ## Imagery
 

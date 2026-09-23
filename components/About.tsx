@@ -1,5 +1,4 @@
 import Image from "next/image";
-import CapabilitiesGrid from "@/components/CapabilitiesGrid";
 
 const values = [
   {
@@ -151,10 +150,6 @@ export default function About() {
               </article>
             ))}
           </div>
-        </section>
-
-        <section className="pt-6">
-          <CapabilitiesGrid />
         </section>
       </div>
     </section>

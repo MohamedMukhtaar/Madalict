@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import About from "@/components/About";
+import Capabilities from "@/components/Capabilities";
 import Footer from "@/components/Footer";
 import Industries from "@/components/Industries";
 import Navbar from "@/components/Navbar";
@@ -15,6 +16,7 @@ export default function AboutPage() {
       <Navbar />
       <About />
       <Industries />
+      <Capabilities />
       <Footer />
     </main>
   );
