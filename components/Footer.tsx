@@ -56,7 +56,7 @@ export default function Footer() {
   const gmailLink = socialLinks.find((item) => item.label === "Gmail");
 
   return (
-    <footer className="relative border-t border-brand-100/70 dark:border-white/10">
+    <footer className="relative border-t border-accent-500/40 dark:border-accent-400/25">
       <div className="section-shell py-10 sm:py-12">
         <div className="grid gap-10 lg:grid-cols-[1.4fr_0.9fr_0.8fr_1fr]">
           <div className="max-w-md">
@@ -67,19 +67,19 @@ export default function Footer() {
               </p>
             </Link>
 
-            <p className="mt-5 max-w-[26rem] text-sm leading-6 text-slate-700 dark:text-slate-200">
+            <p className="mt-5 max-w-[26rem] text-sm leading-6 text-ink dark:text-slate-200">
               We design polished websites, dependable systems, and growth-ready digital tools that help organizations look stronger, load faster, and convert with more confidence.
             </p>
           </div>
 
           <div>
-            <h3 className="text-base font-medium tracking-tight text-slate-950 dark:text-white">Services</h3>
+            <h3 className="text-base font-medium tracking-tight text-ink dark:text-white">Services</h3>
             <div className="mt-4 flex flex-col gap-2.5">
               {featuredServices.map((service) => (
                 <Link
                   key={service.slug}
                   href={`/services/${service.slug}`}
-                  className="text-sm font-medium text-slate-700 transition hover:text-accent-600 dark:text-slate-200 dark:hover:text-accent-300"
+                  className="w-fit text-sm font-medium text-ink underline decoration-transparent underline-offset-4 transition hover:decoration-accent-500 dark:text-slate-200 dark:hover:decoration-accent-400"
                 >
                   {service.title}
                 </Link>
@@ -88,13 +88,13 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-base font-medium tracking-tight text-slate-950 dark:text-white">Pages</h3>
+            <h3 className="text-base font-medium tracking-tight text-ink dark:text-white">Pages</h3>
             <div className="mt-4 flex flex-col gap-2.5">
               {quickLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-slate-700 transition hover:text-accent-600 dark:text-slate-200 dark:hover:text-accent-300"
+                  className="w-fit text-sm font-medium text-ink underline decoration-transparent underline-offset-4 transition hover:decoration-accent-500 dark:text-slate-200 dark:hover:decoration-accent-400"
                 >
                   {link.label}
                 </Link>
@@ -103,18 +103,25 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-base font-medium tracking-tight text-slate-950 dark:text-white">Contact</h3>
-            <div className="mt-4 space-y-2.5 text-sm text-slate-700 dark:text-slate-200">
+            <h3 className="text-base font-medium tracking-tight text-ink dark:text-white">Contact</h3>
+            <div className="mt-4 space-y-2.5 text-sm text-ink dark:text-slate-200">
               {gmailLink ? (
-                <Link href={gmailLink.href} className="block font-medium transition hover:text-accent-600 dark:hover:text-accent-300">
+                <Link href={gmailLink.href} className="block w-fit font-medium underline decoration-transparent underline-offset-4 transition hover:decoration-accent-500 dark:hover:decoration-accent-400">
                   {contactDetails.email}
                 </Link>
               ) : null}
-              <p className="font-medium">{contactDetails.phone}</p>
-              <p>{contactDetails.location}</p>
+              <Link
+                href={`tel:${contactDetails.phoneHref}`}
+                className="block w-fit font-medium underline decoration-transparent underline-offset-4 transition hover:decoration-accent-500 dark:hover:decoration-accent-400"
+              >
+                {contactDetails.phone}
+              </Link>
+              <p className="w-fit underline decoration-transparent underline-offset-4 transition hover:decoration-accent-500 dark:hover:decoration-accent-400">
+                {contactDetails.location}
+              </p>
             </div>
 
-            <div className="mt-5 flex flex-wrap items-center gap-4 text-slate-900 dark:text-white">
+            <div className="mt-5 flex flex-wrap items-center gap-4 text-ink dark:text-white">
               {iconSocials.map((item) => (
                 <Link
                   key={item.label}
@@ -131,14 +138,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 flex flex-col gap-3 border-t border-slate-200 pr-16 pt-5 text-sm text-slate-500 dark:border-white/10 dark:text-slate-400 sm:flex-row sm:items-center sm:justify-between sm:pr-0">
-          <p className="font-medium text-slate-600 dark:text-slate-300">Copyright (c) {new Date().getFullYear()} {contactDetails.companyName}. All rights reserved.</p>
+        <div className="mt-8 flex flex-col gap-3 border-t border-accent-500/30 pr-16 pt-5 text-sm text-slate-500 dark:border-accent-400/20 dark:text-slate-400 sm:flex-row sm:items-center sm:justify-between sm:pr-0">
+          <p className="font-medium text-ink dark:text-slate-300">Copyright (c) {new Date().getFullYear()} {contactDetails.companyName}. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-4 sm:justify-end">
             {legalLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-medium transition hover:text-accent-600 dark:hover:text-accent-300"
+                className="w-fit font-medium underline decoration-transparent underline-offset-4 transition hover:decoration-accent-500 dark:hover:decoration-accent-400"
               >
                 {link.label}
               </Link>

@@ -1,6 +1,12 @@
-export type NavItem = {
+export type NavLink = {
   label: string;
   href: string;
+};
+
+export type NavItem = {
+  label: string;
+  href?: string;
+  children?: NavLink[];
 };
 
 export type Service = {
@@ -43,8 +49,15 @@ export type BlogPost = {
 export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
-  { label: "About", href: "/about" },
-  { label: "Blog", href: "/blog" },
+  {
+    label: "Resources",
+    children: [
+      { label: "About", href: "/about" },
+      { label: "Blog", href: "/blog" },
+      { label: "FAQs", href: "/faq" },
+    ],
+  },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const heroStats = [
@@ -63,7 +76,7 @@ const art = {
   mobile: "/photos/mobile-app-development.webp",
   design: "/photos/ui-ux-design.webp",
   operations: "/photos/custom-business-systems.webp",
-  database: "/photos/database-solutions.webp",
+  dataAnalysis: "/photos/data-analysis.webp",
   consulting: "/photos/it-consulting.webp",
   blogTrust: "/photos/blog-trust.webp",
   blogWorkflows: "/photos/blog-workflows.webp",
@@ -112,14 +125,14 @@ export const services: Service[] = [
     deliverables: ["ERP-style workflows", "Role-based dashboards", "Approval pipelines"],
   },
   {
-    slug: "database-solutions",
-    title: "Database Solutions",
+    slug: "data-analysis",
+    title: "Data Analysis",
     description:
-      "Secure data architecture, optimization, and management for dependable reporting and scalable business operations.",
+      "Dashboards, reporting, and data analytics that turn scattered business records into decisions you can act on.",
     summary:
-      "Your systems are only as strong as the data underneath them, so we build clean, stable, and maintainable data layers.",
-    image: art.database,
-    deliverables: ["Database design", "Performance tuning", "Backup planning"],
+      "We turn raw business data into clear dashboards and reports, so leadership can see what is happening and act on it quickly.",
+    image: art.dataAnalysis,
+    deliverables: ["Reporting dashboards", "Data visualization", "Business intelligence setup"],
   },
   {
     slug: "it-consulting",
@@ -292,7 +305,13 @@ export const blogPosts: BlogPost[] = [
   },
 ];
 
-export const quickLinks = navItems;
+export const quickLinks: NavLink[] = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
+];
 
 export const socialLinks: SocialLink[] = [
   { label: "GitHub", href: "https://github.com/MohamedMokhtaar" },
@@ -325,21 +344,25 @@ export const deliveryProcess = [
     title: "Discovery",
     description:
       "We start by understanding your business, your team, and the workflow you already rely on before proposing anything technical.",
+    icon: "search",
   },
   {
     title: "Design",
     description:
       "We map the structure, screens, and journeys so everyone can see the shape of the solution before development begins.",
+    icon: "pencil",
   },
   {
     title: "Build",
     description:
       "We develop in reviewable stages, so you see working progress early instead of waiting until the very end.",
+    icon: "code",
   },
   {
     title: "Launch and support",
     description:
       "We handle deployment, train your team, and stay available for adjustments once the solution meets real users.",
+    icon: "rocket",
   },
 ];
 
@@ -464,33 +487,33 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       },
     ],
   },
-  "database-solutions": {
-    tagline: "Clean data foundations your reporting can depend on",
+  "data-analysis": {
+    tagline: "Turn scattered records into decisions you can act on",
     overview: [
-      "Every system is only as trustworthy as the data underneath it. We design, tune, and maintain data layers so your reports agree with each other and your platform stays fast as records grow.",
-      "This covers new database design as well as rescuing existing systems that have become slow, inconsistent, or risky to back up.",
+      "Most organizations already have the data they need, it is just spread across spreadsheets, systems, and paper that nobody has time to reconcile. We build dashboards and reports that pull it together into a view leadership can actually use.",
+      "This covers new reporting builds as well as making sense of an existing system's data that has become messy, inconsistent, or hard to trust.",
     ],
     outcomes: [
+      "Dashboards that answer real business questions at a glance",
       "Reports that reconcile instead of contradicting each other",
-      "Query performance that holds up as data volume grows",
-      "A tested backup and recovery plan, not an assumed one",
-      "Clear documentation of how your data is structured",
+      "Trends and patterns surfaced before they become problems",
+      "Less time spent assembling numbers by hand every month",
     ],
     idealFor: [
-      "Systems that have slowed down as records accumulated",
-      "Organizations unsure whether their backups actually restore",
-      "Teams planning a new platform and wanting the data model right first",
+      "Teams still compiling monthly reports manually in spreadsheets",
+      "Leadership that cannot get a straight answer from existing data",
+      "Organizations wanting to track performance against real numbers",
     ],
     faqs: [
       {
-        question: "Can you work with our existing database?",
+        question: "Can you work with our existing data and systems?",
         answer:
-          "Yes. We audit the current structure and performance, then recommend whether tuning, restructuring, or migration is the right call.",
+          "Yes. We audit what you already have, then build reporting and dashboards on top of it rather than asking you to switch systems first.",
       },
       {
-        question: "Do you handle data migration?",
+        question: "Do you build one-off reports or ongoing dashboards?",
         answer:
-          "Yes, including cleaning and validating records so you do not carry old inconsistencies into a new system.",
+          "Both. Many clients start with a one-time analysis, then move to a live dashboard once they see which numbers matter most.",
       },
     ],
   },
@@ -638,7 +661,7 @@ export const homeFaqs = [
   {
     question: "What services does Madal ICT Solutions offer?",
     answer:
-      "We build websites, mobile apps, custom business systems, and database solutions, and provide UI/UX design and IT consulting. Most clients start with one service and expand as their needs grow.",
+      "We build websites, mobile apps, custom business systems, and data analysis dashboards, and provide UI/UX design and IT consulting. Most clients start with one service and expand as their needs grow.",
   },
   {
     question: "How long does a typical project take?",
@@ -659,5 +682,119 @@ export const homeFaqs = [
     question: "How much does a project cost?",
     answer:
       "Pricing depends on scope, features, and timeline. Book a free consultation and we will give you a clear estimate before any commitment is required.",
+  },
+];
+
+export type FaqCategory = {
+  label: string;
+  faqs: { question: string; answer: string }[];
+};
+
+/** Categorized questions shown on the dedicated /faq page. */
+export const faqCategories: FaqCategory[] = [
+  {
+    label: "Company",
+    faqs: [
+      {
+        question: "What is Madal ICT Solutions?",
+        answer:
+          "Madal ICT Solutions is a digital technology company based in Mogadishu, focused on helping organizations modernize through websites, business systems, mobile tools, and ICT consulting.",
+      },
+      {
+        question: "What is the mission of Madal ICT Solutions?",
+        answer:
+          "To design and develop high-quality digital products that help businesses operate better, look stronger, and grow with confidence.",
+      },
+      {
+        question: "What are the core values of Madal ICT Solutions?",
+        answer:
+          "Customer satisfaction, integrity, quality, and innovation guide every project we take on, from the first conversation to ongoing support.",
+      },
+      {
+        question: "Where is Madal ICT Solutions based, and who do you serve?",
+        answer:
+          "We are based in Mogadishu, Somalia, and deliver projects remotely for clients in other countries as well, with regular check-ins throughout the engagement.",
+      },
+      {
+        question: "What industries does Madal ICT Solutions work with?",
+        answer:
+          "We work across retail, healthcare, education, finance, manufacturing, logistics, NGOs, and small and medium businesses, adapting our approach to how each sector actually operates.",
+      },
+      {
+        question: "What makes Madal ICT Solutions different from other providers?",
+        answer:
+          "We combine practical business understanding with clean design and dependable engineering, so clients get systems that fit how their team actually works, not a generic template.",
+      },
+    ],
+  },
+  {
+    label: "Services",
+    faqs: [
+      {
+        question: "What services does Madal ICT Solutions offer?",
+        answer:
+          "We build websites, mobile apps, custom business systems, and data analysis dashboards, and provide UI/UX design and IT consulting. Most clients start with one service and expand as their needs grow.",
+      },
+      {
+        question: "How long does a typical project take?",
+        answer:
+          "It depends on scope. A focused website usually takes three to six weeks, while custom systems and mobile apps typically run six to twelve weeks. We confirm a realistic timeline during discovery before any work begins.",
+      },
+      {
+        question: "How much does a project cost?",
+        answer:
+          "Pricing depends on scope, features, and timeline. Book a free consultation and we will give you a clear estimate before any commitment is required.",
+      },
+      {
+        question: "Do you work with businesses outside Somalia?",
+        answer:
+          "Yes. We deliver projects remotely for clients in other countries, with regular check-ins by call, email, or WhatsApp throughout the engagement.",
+      },
+      {
+        question: "Can you redesign an existing website or system instead of building from scratch?",
+        answer:
+          "Yes. We regularly review existing sites and systems, then decide with you whether targeted improvements or a full rebuild is the better investment.",
+      },
+      {
+        question: "Do you build both websites and mobile apps for the same business?",
+        answer:
+          "Yes. Many clients start with one service, such as a website, and later add a mobile app or business system once they see how we work.",
+      },
+    ],
+  },
+  {
+    label: "Support",
+    faqs: [
+      {
+        question: "What happens after the project launches?",
+        answer:
+          "Our partnership continues after handover. We offer ongoing technical support, small adjustments, and guidance so your system keeps running smoothly as your business changes.",
+      },
+      {
+        question: "How can I reach support if something goes wrong?",
+        answer:
+          "You can reach us by live chat, WhatsApp, phone, or email, whichever is easiest for you. You will reach a real person, not a ticket queue.",
+      },
+      {
+        question: "Do you offer ongoing maintenance after launch?",
+        answer:
+          "Yes. Many clients keep an ongoing support arrangement with us for updates, small changes, and monitoring so their systems stay dependable long after launch.",
+      },
+      {
+        question: "Will your team train us to use the new system?",
+        answer:
+          "Yes. Before handover, we walk your team through the system and provide guidance so everyone is comfortable using it from day one.",
+      },
+      {
+        question: "What happens if I need changes after delivery?",
+        answer:
+          "Small adjustments are part of our ongoing support. For larger changes, we scope the work and give you a clear estimate before starting.",
+      },
+      {
+        question: "What support channels are available?",
+        answer:
+          "You can reach us through live chat, WhatsApp, phone, or email. We aim to respond quickly and connect you with someone who can actually help.",
+      },
+    ],
   },
 ];

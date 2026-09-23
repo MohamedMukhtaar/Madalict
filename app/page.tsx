@@ -1,7 +1,6 @@
 import AboutPreview from "@/components/AboutPreview";
 import BlogPreview from "@/components/BlogPreview";
 import Capabilities from "@/components/Capabilities";
-import ContactLinks from "@/components/ContactLinks";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import HelpSupport from "@/components/HelpSupport";
@@ -20,14 +19,13 @@ export default function Home() {
       <Hero />
       <AboutPreview />
       <Services limit={3} showCta />
-      <Industries />
       <WhyChooseUs />
+      <Industries />
       <TrustedCompanies />
       <Testimonials />
       <FAQ />
       <HelpSupport />
       <BlogPreview limit={3} />
-      <ContactLinks showContactCard={false} />
       <Capabilities />
       <Footer />
     </main>

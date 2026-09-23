@@ -10,10 +10,10 @@ export default function Hero() {
           <span className="accent-chip">
             Madal ICT Solutions
           </span>
-          <h1 className="mt-5 text-3xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-4xl lg:text-5xl">
+          <h1 className="mt-5 text-3xl font-semibold tracking-tight text-ink dark:text-white sm:text-4xl lg:text-5xl">
             Technology is our how. <span className="text-accent-600 dark:text-accent-400">People are our why.</span>
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-ink dark:text-slate-300">
             Madal ICT Solutions designs premium websites, dependable business systems, and practical digital tools that help teams serve customers better, convert more leads, and operate with confidence.
           </p>
 
@@ -35,7 +35,7 @@ export default function Hero() {
                   <p className="text-3xl font-semibold tracking-[-0.02em] text-accent-600 dark:text-accent-400 sm:text-4xl">
                     <AnimatedCounter value={stat.value} />
                   </p>
-                  <p className="mt-2 text-sm font-medium text-slate-600 dark:text-slate-300">
+                  <p className="mt-2 text-sm font-medium text-ink dark:text-slate-300">
                     {stat.label}
                   </p>
                 </div>

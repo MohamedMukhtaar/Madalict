@@ -58,10 +58,10 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
                 Blog
               </Link>
               <span aria-hidden="true">/</span>
-              <span className="font-medium text-slate-700 dark:text-slate-200">{post.category}</span>
+              <span className="font-medium text-ink dark:text-slate-200">{post.category}</span>
             </nav>
 
-            <h1 className="mt-6 max-w-4xl text-2xl font-medium tracking-tight text-slate-950 dark:text-white sm:text-3xl">
+            <h1 className="mt-6 max-w-4xl text-2xl font-medium tracking-tight text-ink dark:text-white sm:text-3xl">
               {post.title}
             </h1>
 
@@ -90,15 +90,15 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
           <div className="section-shell">
             <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
               <div className="max-w-3xl">
-                <p className="text-xl leading-9 text-slate-700 dark:text-slate-200">{content.intro}</p>
+                <p className="text-xl leading-9 text-ink dark:text-slate-200">{content.intro}</p>
 
                 {content.sections.map((section) => (
                   <section key={section.heading} className="mt-12">
-                    <h2 className="text-2xl font-medium tracking-tight text-slate-950 dark:text-white sm:text-3xl">
+                    <h2 className="text-2xl font-medium tracking-tight text-ink dark:text-white sm:text-3xl">
                       {section.heading}
                     </h2>
                     {section.paragraphs.map((paragraph) => (
-                      <p key={paragraph} className="mt-5 text-lg leading-9 text-slate-600 dark:text-slate-300">
+                      <p key={paragraph} className="mt-5 text-lg leading-9 text-ink dark:text-slate-300">
                         {paragraph}
                       </p>
                     ))}
@@ -108,8 +108,8 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
 
               <aside className="space-y-10 lg:sticky lg:top-28 lg:self-start">
                 <div>
-                  <h2 className="text-xl font-medium tracking-tight text-slate-950 dark:text-white">Key takeaways</h2>
-                  <ul className="mt-5 space-y-4 text-base leading-7 text-slate-600 dark:text-slate-300">
+                  <h2 className="text-xl font-medium tracking-tight text-ink dark:text-white">Key takeaways</h2>
+                  <ul className="mt-5 space-y-4 text-base leading-7 text-ink dark:text-slate-300">
                     {content.takeaways.map((takeaway) => (
                       <li key={takeaway} className="flex items-start gap-3">
                         <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent-500/15 text-accent-600 dark:text-accent-300">
@@ -124,10 +124,10 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
                 </div>
 
                 <div>
-                  <h2 className="text-xl font-medium tracking-tight text-slate-950 dark:text-white">
+                  <h2 className="text-xl font-medium tracking-tight text-ink dark:text-white">
                     Facing this in your own organization?
                   </h2>
-                  <p className="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300">
+                  <p className="mt-4 text-base leading-7 text-ink dark:text-slate-300">
                     We are happy to talk it through, whether or not it turns into a project.
                   </p>
                   <Link href="/contact" className="button-primary mt-6 w-full">
@@ -142,7 +142,7 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
 
       <section className="section-spacing bg-white/[0.55] dark:bg-brand-900">
         <div className="section-shell">
-          <h2 className="text-2xl font-medium tracking-tight text-slate-950 dark:text-white sm:text-3xl">
+          <h2 className="text-2xl font-medium tracking-tight text-ink dark:text-white sm:text-3xl">
             More from the blog
           </h2>
 
@@ -167,8 +167,8 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
                     <span>{item.category}</span>
                     <span>{item.readTime}</span>
                   </div>
-                  <h3 className="mt-4 text-xl font-medium tracking-tight text-slate-950 dark:text-white">{item.title}</h3>
-                  <p className="mt-3 flex-1 text-base leading-7 text-slate-600 dark:text-slate-300">{item.excerpt}</p>
+                  <h3 className="mt-4 text-xl font-medium tracking-tight text-ink dark:text-white">{item.title}</h3>
+                  <p className="mt-3 flex-1 text-base leading-7 text-ink dark:text-slate-300">{item.excerpt}</p>
                   <span className="mt-5 text-sm font-semibold text-accent-600 dark:text-accent-300">Read article</span>
                 </div>
               </Link>

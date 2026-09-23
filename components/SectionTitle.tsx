@@ -16,8 +16,8 @@ export default function SectionTitle({
   invert = false,
 }: SectionTitleProps) {
   const alignment = align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-2xl";
-  const titleClass = invert ? "text-white" : "text-slate-950 dark:text-white";
-  const descriptionClass = invert ? "text-slate-300" : "text-slate-600 dark:text-slate-300";
+  const titleClass = invert ? "text-white" : "text-ink dark:text-white";
+  const descriptionClass = invert ? "text-slate-300" : "text-ink dark:text-slate-300";
 
   return (
     <Reveal className={`space-y-4 ${alignment}`}>

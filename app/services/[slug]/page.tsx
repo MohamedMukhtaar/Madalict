@@ -58,16 +58,16 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                   Services
                 </Link>
                 <span aria-hidden="true">/</span>
-                <span className="font-medium text-slate-700 dark:text-slate-200">{service.title}</span>
+                <span className="font-medium text-ink dark:text-slate-200">{service.title}</span>
               </nav>
 
-              <h1 className="mt-6 max-w-3xl text-2xl font-medium tracking-tight text-slate-950 dark:text-white sm:text-3xl">
+              <h1 className="mt-6 max-w-3xl text-2xl font-medium tracking-tight text-ink dark:text-white sm:text-3xl">
                 {service.title}
               </h1>
               <p className="mt-4 max-w-2xl text-lg leading-8 text-accent-600 dark:text-accent-300">
                 {detail.tagline}
               </p>
-              <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300">
+              <p className="mt-5 max-w-2xl text-base leading-8 text-ink dark:text-slate-300">
                 {service.description}
               </p>
 
@@ -103,20 +103,20 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               <span className="accent-chip">Overview</span>
               <div className="mt-6 space-y-5">
                 {detail.overview.map((paragraph) => (
-                  <p key={paragraph} className="text-lg leading-9 text-slate-600 dark:text-slate-300">
+                  <p key={paragraph} className="text-lg leading-9 text-ink dark:text-slate-300">
                     {paragraph}
                   </p>
                 ))}
               </div>
 
-              <h2 className="mt-12 text-2xl font-medium tracking-tight text-slate-950 dark:text-white sm:text-3xl">
+              <h2 className="mt-12 text-2xl font-medium tracking-tight text-ink dark:text-white sm:text-3xl">
                 What you get
               </h2>
               <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                 {service.deliverables.map((deliverable) => (
                   <li
                     key={deliverable}
-                    className="flex items-center gap-3 text-base text-slate-700 dark:text-slate-200"
+                    className="flex items-center gap-3 text-base text-ink dark:text-slate-200"
                   >
                     <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent-500 text-xs font-bold text-brand-900">
                       +
@@ -126,12 +126,12 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 ))}
               </ul>
 
-              <h2 className="mt-12 text-2xl font-medium tracking-tight text-slate-950 dark:text-white sm:text-3xl">
+              <h2 className="mt-12 text-2xl font-medium tracking-tight text-ink dark:text-white sm:text-3xl">
                 Results you should expect
               </h2>
               <ul className="mt-6 space-y-4">
                 {detail.outcomes.map((outcome) => (
-                  <li key={outcome} className="flex items-start gap-4 text-base leading-7 text-slate-600 dark:text-slate-300">
+                  <li key={outcome} className="flex items-start gap-4 text-base leading-7 text-ink dark:text-slate-300">
                     <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent-500/15 text-accent-600 dark:text-accent-300">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" className="h-3.5 w-3.5" aria-hidden="true">
                         <path d="m5 12.5 4.5 4.5L19 7.5" />
@@ -145,8 +145,8 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
             <aside className="space-y-10">
               <div>
-                <h2 className="text-xl font-medium tracking-tight text-slate-950 dark:text-white">Ideal for</h2>
-                <ul className="mt-5 space-y-4 text-base leading-7 text-slate-600 dark:text-slate-300">
+                <h2 className="text-xl font-medium tracking-tight text-ink dark:text-white">Ideal for</h2>
+                <ul className="mt-5 space-y-4 text-base leading-7 text-ink dark:text-slate-300">
                   {detail.idealFor.map((item) => (
                     <li key={item} className="border-l-2 border-accent-500/40 pl-4">
                       {item}
@@ -156,10 +156,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               </div>
 
               <div>
-                <h2 className="text-xl font-medium tracking-tight text-slate-950 dark:text-white">
+                <h2 className="text-xl font-medium tracking-tight text-ink dark:text-white">
                   Not sure where to start?
                 </h2>
-                <p className="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300">
+                <p className="mt-4 text-base leading-7 text-ink dark:text-slate-300">
                   Tell us how your business works today. We will tell you honestly whether this is the right service for
                   the problem you are describing.
                 </p>
@@ -176,7 +176,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         <div className="section-shell">
           <div className="mx-auto max-w-3xl text-center">
             <span className="accent-chip">How we deliver</span>
-            <h2 className="mt-4 text-2xl font-medium tracking-tight text-slate-950 dark:text-white sm:text-3xl">
+            <h2 className="mt-4 text-2xl font-medium tracking-tight text-ink dark:text-white sm:text-3xl">
               A delivery process you can follow from start to launch
             </h2>
           </div>
@@ -187,8 +187,8 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 <span className="text-sm font-medium uppercase tracking-[0.22em] text-accent-600 dark:text-accent-300">
                   Step {index + 1}
                 </span>
-                <h3 className="mt-2 text-xl font-medium tracking-tight text-slate-950 dark:text-white">{step.title}</h3>
-                <p className="mt-3 text-base leading-7 text-slate-600 dark:text-slate-300">{step.description}</p>
+                <h3 className="mt-2 text-xl font-medium tracking-tight text-ink dark:text-white">{step.title}</h3>
+                <p className="mt-3 text-base leading-7 text-ink dark:text-slate-300">{step.description}</p>
               </li>
             ))}
           </ol>
@@ -200,7 +200,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
               <span className="accent-chip">Questions</span>
-              <h2 className="mt-4 text-2xl font-medium tracking-tight text-slate-950 dark:text-white sm:text-3xl">
+              <h2 className="mt-4 text-2xl font-medium tracking-tight text-ink dark:text-white sm:text-3xl">
                 Common questions about {service.title.toLowerCase()}
               </h2>
             </div>
@@ -208,13 +208,13 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             <div className="space-y-4">
               {detail.faqs.map((faq) => (
                 <details key={faq.question} className="card-surface group p-5">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-medium text-slate-950 dark:text-white">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-medium text-ink dark:text-white">
                     {faq.question}
                     <span className="shrink-0 text-accent-600 transition group-open:rotate-45 dark:text-accent-300" aria-hidden="true">
                       +
                     </span>
                   </summary>
-                  <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">{faq.answer}</p>
+                  <p className="mt-3 text-sm leading-6 text-ink dark:text-slate-300">{faq.answer}</p>
                 </details>
               ))}
             </div>
@@ -224,7 +224,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
       <section className="section-spacing bg-white/[0.55] dark:bg-brand-900">
         <div className="section-shell">
-          <h2 className="text-2xl font-medium tracking-tight text-slate-950 dark:text-white sm:text-3xl">
+          <h2 className="text-2xl font-medium tracking-tight text-ink dark:text-white sm:text-3xl">
             Other services
           </h2>
 
@@ -235,8 +235,8 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 href={`/services/${item.slug}`}
                 className="card-surface group flex h-full flex-col p-6 transition duration-300 hover:-translate-y-1 hover:border-accent-500/35 sm:p-7"
               >
-                <h3 className="text-xl font-medium tracking-tight text-slate-950 dark:text-white">{item.title}</h3>
-                <p className="mt-4 flex-1 text-base leading-7 text-slate-600 dark:text-slate-300">{item.summary}</p>
+                <h3 className="text-xl font-medium tracking-tight text-ink dark:text-white">{item.title}</h3>
+                <p className="mt-4 flex-1 text-base leading-7 text-ink dark:text-slate-300">{item.summary}</p>
                 <span className="mt-6 text-sm font-semibold text-accent-600 dark:text-accent-300">
                   Read more
                 </span>

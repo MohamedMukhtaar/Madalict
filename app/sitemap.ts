@@ -4,7 +4,7 @@ import { blogPosts, services } from "@/data/siteData";
 const baseUrl = "https://madalict.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/services", "/about", "/blog", "/contact", "/privacy", "/terms"].map(
+  const staticRoutes = ["", "/services", "/about", "/blog", "/faq", "/contact", "/privacy", "/terms"].map(
     (path) => ({
       url: `${baseUrl}${path}`,
       lastModified: new Date(),

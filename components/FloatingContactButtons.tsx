@@ -35,7 +35,7 @@ export default function FloatingContactButtons() {
           target="_blank"
           rel="noreferrer"
           aria-label={`Chat with ${contactDetails.companyName} on WhatsApp`}
-          className="pointer-events-auto inline-flex h-16 w-16 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_18px_40px_-12px_rgba(37,211,102,0.8)] transition hover:scale-105"
+          className="pointer-events-auto inline-flex h-16 w-16 items-center justify-center rounded-full bg-accent-500 text-white shadow-accent transition hover:scale-105 hover:bg-[#25D366] hover:shadow-[0_18px_40px_-12px_rgba(37,211,102,0.8)]"
         >
           <FloatingIcon type="whatsapp" />
         </Link>

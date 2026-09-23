@@ -26,10 +26,10 @@ const emptyForm: FormState = {
 };
 
 const fieldClass =
-  "rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-accent-400 focus:ring-4 focus:ring-accent-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white";
+  "rounded-2xl border border-slate-200 bg-white px-4 py-3 text-ink outline-none transition placeholder:text-slate-400 focus:border-accent-400 focus:ring-4 focus:ring-accent-500/10 dark:border-slate-700 dark:bg-slate-900 dark:text-white";
 const invalidFieldClass =
-  "rounded-2xl border border-red-400 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-red-500 focus:ring-4 focus:ring-red-500/10 dark:border-red-500/70 dark:bg-slate-900 dark:text-white";
-const labelClass = "grid gap-2 text-sm font-medium text-slate-700 dark:text-slate-200";
+  "rounded-2xl border border-red-400 bg-white px-4 py-3 text-ink outline-none transition placeholder:text-slate-400 focus:border-red-500 focus:ring-4 focus:ring-red-500/10 dark:border-red-500/70 dark:bg-slate-900 dark:text-white";
+const labelClass = "grid gap-2 text-sm font-medium text-ink dark:text-slate-200";
 
 function validate(form: FormState): FieldErrors {
   const errors: FieldErrors = {};
@@ -125,10 +125,10 @@ export default function ContactForm() {
             <path d="m5 12.5 4.5 4.5L19 7.5" />
           </svg>
         </div>
-        <h3 className="mt-6 text-2xl font-medium tracking-tight text-slate-950 dark:text-white">
+        <h3 className="mt-6 text-2xl font-medium tracking-tight text-ink dark:text-white">
           Your details are ready to send
         </h3>
-        <p className="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300">
+        <p className="mt-4 text-base leading-7 text-ink dark:text-slate-300">
           {sentVia === "whatsapp"
             ? "We opened WhatsApp with your project details already written out. Press send there and we will reply shortly."
             : "We opened your email app with your project details already written out. Press send there and we will reply shortly."}

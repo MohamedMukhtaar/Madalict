@@ -29,7 +29,7 @@ function ContactInfoIcon({ icon }: { icon: string }) {
   };
 
   return (
-    <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-accent-500 text-brand-900 shadow-accent dark:bg-accent-400 dark:text-slate-950">
+    <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-accent-500 text-brand-900 shadow-accent dark:bg-accent-400 dark:text-ink">
       {icon === "email" ? (
         <svg {...commonProps}>
           <path d="M4.5 6.75 12 12l7.5-5.25" />
@@ -62,10 +62,10 @@ export default function Contact() {
             <span className="accent-chip">
               Contact
             </span>
-            <h2 className="mt-5 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-3xl">
+            <h2 className="mt-5 text-2xl font-semibold tracking-tight text-ink dark:text-white sm:text-3xl">
               Let&apos;s plan a digital solution that feels strong from day one
             </h2>
-            <p className="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
+            <p className="mt-4 text-base leading-7 text-ink dark:text-slate-300 sm:text-lg">
               Share your goals, choose the service you need, and tell us how your business currently works. We&apos;ll help shape a cleaner, stronger next step.
             </p>
             <div className="mt-10 grid gap-4">
@@ -79,7 +79,7 @@ export default function Contact() {
                     <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${index % 2 === 0 ? "text-brand-700 dark:text-brand-300" : "text-accent-600 dark:text-accent-300"}`}>
                       {item.label}
                     </p>
-                    <p className="mt-2 text-base text-slate-700 dark:text-slate-200">{item.value}</p>
+                    <p className="mt-2 text-base text-ink dark:text-slate-200">{item.value}</p>
                   </div>
                 </div>
               ))}

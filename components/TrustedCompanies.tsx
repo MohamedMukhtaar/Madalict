@@ -27,7 +27,7 @@ export default function TrustedCompanies() {
                     .join("")}
                 </div>
                 <div>
-                  <h3 className="text-base font-medium text-slate-950 dark:text-white">{company.name}</h3>
+                  <h3 className="text-base font-medium text-ink dark:text-white">{company.name}</h3>
                   <p className="text-sm text-slate-500 dark:text-slate-400">{company.industry}</p>
                 </div>
               </div>

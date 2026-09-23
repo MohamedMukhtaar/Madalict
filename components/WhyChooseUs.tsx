@@ -2,6 +2,54 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import { deliveryProcess, whyChooseUs } from "@/data/siteData";
 
+function ProcessIcon({ icon }: { icon: string }) {
+  const props = {
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "1.7",
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    className: "h-6 w-6",
+    "aria-hidden": true,
+  };
+
+  switch (icon) {
+    case "search":
+      return (
+        <svg {...props}>
+          <circle cx="10.5" cy="10.5" r="6.5" />
+          <path d="m19.5 19.5-4.35-4.35" />
+        </svg>
+      );
+    case "pencil":
+      return (
+        <svg {...props}>
+          <path d="M15.7 4.7 19.3 8.3 8.6 19H5v-3.6Z" />
+          <path d="m14 6.4 3.6 3.6" />
+        </svg>
+      );
+    case "code":
+      return (
+        <svg {...props}>
+          <path d="m8.5 8-4 4 4 4" />
+          <path d="m15.5 8 4 4-4 4" />
+          <path d="m13 5-2 14" />
+        </svg>
+      );
+    case "rocket":
+      return (
+        <svg {...props}>
+          <path d="M12 3.5c2.5 1.2 4.25 3.8 4.25 7.3 0 2.2-.6 4-1.35 5.3l-2.9 1.9-2.9-1.9c-.75-1.3-1.35-3.1-1.35-5.3 0-3.5 1.75-6.1 4.25-7.3Z" />
+          <circle cx="12" cy="10.5" r="1.6" />
+          <path d="M9.5 16.5 7 19M14.5 16.5 17 19M10.2 20.5h3.6" />
+        </svg>
+      );
+    default:
+      return null;
+  }
+}
+
 function ReasonIcon({ icon }: { icon: string }) {
   const props = {
     viewBox: "0 0 24 24",
@@ -55,10 +103,10 @@ export default function WhyChooseUs() {
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           <Reveal className="lg:sticky lg:top-28 lg:self-start">
             <span className="accent-chip">Why Choose Madal</span>
-            <h2 className="mt-5 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-3xl lg:text-4xl">
+            <h2 className="mt-5 text-2xl font-semibold tracking-tight text-ink dark:text-white sm:text-3xl lg:text-4xl">
               Every successful business needs technology that works for them, not against them
             </h2>
-            <p className="mt-5 text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">
+            <p className="mt-5 text-base leading-8 text-ink dark:text-slate-300 sm:text-lg">
               We were founded on a simple belief: technology should simplify operations, improve
               productivity, and create opportunities for growth.
             </p>
@@ -81,8 +129,8 @@ export default function WhyChooseUs() {
                     <ReasonIcon icon={reason.icon} />
                   </div>
                   <div>
-                    <h3 className="text-base font-medium tracking-tight text-slate-950 dark:text-white">{reason.title}</h3>
-                    <p className="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-300">{reason.description}</p>
+                    <h3 className="text-base font-medium tracking-tight text-ink dark:text-white">{reason.title}</h3>
+                    <p className="mt-1 text-sm leading-6 text-ink dark:text-slate-300">{reason.description}</p>
                   </div>
                 </article>
               </Reveal>
@@ -91,17 +139,20 @@ export default function WhyChooseUs() {
         </div>
 
         <Reveal className="mt-10 rounded-2xl border border-accent-500/20 bg-accent-50/50 p-6 dark:border-accent-500/25 dark:bg-white/[0.04] sm:p-8">
-          <h3 className="text-lg font-medium tracking-tight text-slate-950 dark:text-white">How a project runs</h3>
-          <ol className="mt-6 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+          <h3 className="text-lg font-medium tracking-tight text-ink dark:text-white">How a project runs</h3>
+          <ol className="mt-8 grid gap-x-6 gap-y-9 sm:grid-cols-2 xl:grid-cols-4">
             {deliveryProcess.map((step, index) => (
-              <li key={step.title}>
-                <div className="flex items-center gap-3">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent-500 text-sm font-bold text-brand-900">
-                    {index + 1}
-                  </span>
-                  <span className="text-sm font-medium text-slate-800 dark:text-white">{step.title}</span>
+              <li key={step.title} className="flex items-start gap-3">
+                <span className="text-2xl font-bold leading-none text-accent-500/40 dark:text-accent-400/40">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-accent-500 text-brand-900 shadow-accent">
+                    <ProcessIcon icon={step.icon} />
+                  </div>
+                  <h4 className="mt-3 text-sm font-semibold tracking-tight text-ink dark:text-white">{step.title}</h4>
+                  <p className="mt-2 text-sm leading-6 text-ink dark:text-slate-400">{step.description}</p>
                 </div>
-                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400">{step.description}</p>
               </li>
             ))}
           </ol>

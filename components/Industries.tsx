@@ -93,15 +93,15 @@ export default function Industries() {
         <div className="mt-14 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {industries.map((industry, index) => (
             <Reveal key={industry.title} delayMs={(index % 4) * 80} className="h-full">
-              <article className="group card-surface flex h-full flex-col p-7 transition duration-300 hover:-translate-y-1 hover:border-accent-500 hover:bg-accent-500 dark:hover:border-accent-500 dark:hover:bg-accent-500">
-                <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-accent-500 text-brand-900 shadow-accent transition-colors duration-300 group-hover:bg-brand-900 group-hover:text-white dark:group-hover:bg-brand-900">
+              <article className="group card-surface flex h-full flex-col p-6 transition duration-300 hover:-translate-y-1 hover:border-accent-500 hover:bg-accent-500 dark:hover:border-accent-500 dark:hover:bg-accent-500">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-500 text-brand-900 shadow-accent transition-colors duration-300 group-hover:bg-brand-900 group-hover:text-white dark:group-hover:bg-brand-900">
                   <IndustryIcon icon={industry.icon} />
                 </div>
 
-                <h3 className="mt-6 text-xl font-medium tracking-tight text-slate-950 transition-colors duration-300 group-hover:text-brand-900 dark:text-white dark:group-hover:text-brand-900">
+                <h3 className="mt-5 text-lg font-medium tracking-tight text-ink transition-colors duration-300 group-hover:text-brand-900 dark:text-white dark:group-hover:text-brand-900">
                   {industry.title}
                 </h3>
-                <p className="mt-3 text-base leading-7 text-slate-600 transition-colors duration-300 group-hover:text-brand-900/80 dark:text-slate-300 dark:group-hover:text-brand-900/80">
+                <p className="mt-2 text-sm leading-6 text-ink transition-colors duration-300 group-hover:text-brand-900/80 dark:text-slate-300 dark:group-hover:text-brand-900/80">
                   {industry.description}
                 </p>
               </article>

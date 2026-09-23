@@ -7,7 +7,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Explore Madal ICT services including websites, custom systems, apps, design, databases, and IT consulting.",
+  description: "Explore Madal ICT services including websites, custom systems, apps, design, data analysis, and IT consulting.",
 };
 
 export default function ServicesPage() {

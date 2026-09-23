@@ -66,7 +66,7 @@ export default function ThemeToggle() {
       type="button"
       onClick={toggleTheme}
       aria-label={mounted ? `Switch to ${theme === "dark" ? "light" : "dark"} mode` : "Toggle theme"}
-      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-accent-300 hover:text-accent-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-accent-500/60 dark:hover:text-accent-300"
+      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-ink shadow-sm transition hover:-translate-y-0.5 hover:border-accent-300 hover:text-accent-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-accent-500/60 dark:hover:text-accent-300"
     >
       <span aria-hidden="true">
         {mounted ? theme === "dark" ? <SunIcon /> : <MoonIcon /> : <MoonIcon />}

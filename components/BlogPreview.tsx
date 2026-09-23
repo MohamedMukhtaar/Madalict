@@ -23,7 +23,7 @@ export default function BlogPreview({ limit }: BlogPreviewProps) {
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
           {visiblePosts.map((post) => (
             <article key={post.slug} className="group card-surface overflow-hidden p-3 transition duration-300 hover:-translate-y-1 hover:border-accent-500/35">
-              <div className="relative h-52 overflow-hidden rounded-xl">
+              <div className="relative h-40 overflow-hidden rounded-xl">
                 <Image
                   src={post.image}
                   alt={post.title}
@@ -38,15 +38,15 @@ export default function BlogPreview({ limit }: BlogPreviewProps) {
                   <span>{post.date}</span>
                   <span>{post.readTime}</span>
                 </div>
-                <h3 className="mt-4 text-2xl font-medium tracking-tight text-slate-950 dark:text-white">
+                <h3 className="mt-3 text-xl font-medium tracking-tight text-ink dark:text-white">
                   {post.title}
                 </h3>
-                <p className="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300">
+                <p className="mt-3 text-sm leading-6 text-ink dark:text-slate-300">
                   {post.excerpt}
                 </p>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="mt-6 inline-flex text-sm font-semibold text-accent-600 transition hover:text-accent-700 dark:text-accent-300"
+                  className="mt-5 inline-flex text-sm font-semibold text-accent-600 transition hover:text-accent-700 dark:text-accent-300"
                 >
                   Read the article
                 </Link>

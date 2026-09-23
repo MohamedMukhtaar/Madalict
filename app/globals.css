@@ -34,12 +34,12 @@ html.dark body {
 
 ::selection {
   background: #00c3ff;
-  color: #02354c;
+  color: #ffffff;
 }
 
 html.dark ::selection {
   background: #00c3ff;
-  color: #02354c;
+  color: #ffffff;
 }
 
 @keyframes fade-up {
@@ -71,7 +71,7 @@ html.dark ::selection {
 
 @layer components {
   .section-shell {
-    @apply mx-auto w-[80%] max-w-[1680px];
+    @apply mx-auto w-[90%] max-w-[1280px];
   }
 
   .section-spacing {
@@ -79,7 +79,7 @@ html.dark ::selection {
   }
 
   .card-surface {
-    @apply rounded-2xl border border-brand-100/80 bg-white/[0.92] shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-brand-900/[0.88] dark:shadow-none;
+    @apply rounded-[20px] border border-brand-100/80 bg-white/[0.92] shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-brand-900/[0.88] dark:shadow-none;
   }
 
   /* Cyan is a light colour: it carries navy text, never white, for contrast. */
